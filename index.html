@@ -47,10 +47,14 @@
     background:linear-gradient(180deg,var(--navy) 0%,var(--ink) 100%);
   }
   .topbar .wrap{
-    display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;
-    padding-top:18px;padding-bottom:18px;
+    display:flex;flex-direction:column;align-items:flex-start;gap:6px;
+    padding-top:26px;padding-bottom:24px;
   }
-  .mark{font-family:var(--display);font-size:19px;letter-spacing:.04em;color:var(--kinari)}
+  .mark{
+    font-family:var(--display);font-size:clamp(28px,5.2vw,42px);line-height:1.1;
+    letter-spacing:.03em;color:var(--kinari);
+    text-shadow:0 0 28px rgba(233,169,60,.22)
+  }
   .mark b{color:var(--amber);font-weight:inherit}
   .tagline{font-size:13px;color:var(--muted);line-height:1.6}
 
