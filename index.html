@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>別世界Bar</title>
+<meta name="description" content="珍スポ・団地・廃墟——大阪・四貫島PORTで開催しているトークイベント「別世界Bar」。次回開催までのカウントダウンと開催情報。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="別世界Bar">
+<meta property="og:description" content="珍スポ・団地・廃墟——大阪・四貫島PORTで開催しているトークイベント「別世界Bar」。次回開催までのカウントダウンと開催情報。">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚪</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Oswald:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    color-scheme: dark;
+    --ink:#070B16;
+    --navy:#0F1A33;
+    --navy-2:#16223F;
+    --amber:#E9A93C;
+    --amber-lite:#F6D08A;
+    --kinari:#F3ECDC;
+    --muted:#96A0BC;
+    --line:rgba(243,236,220,.14);
+    --line-strong:rgba(233,169,60,.38);
+    --jp:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+    --display:"Dela Gothic One","Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+    --num:"Oswald","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--kinari);
+    font-family:var(--jp);
+    font-size:16px;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,var(--navy) 0%,var(--ink) 100%);
+  }
+  .topbar .wrap{
+    display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;
+    padding-top:18px;padding-bottom:18px;
+  }
+  .mark{font-family:var(--display);font-size:19px;letter-spacing:.04em;color:var(--kinari)}
+  .mark b{color:var(--amber);font-weight:inherit}
+  .tagline{font-size:13px;color:var(--muted);line-height:1.6}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(90% 70% at 22% 40%,rgba(233,169,60,.10) 0%,rgba(233,169,60,0) 62%),
+      linear-gradient(180deg,var(--ink) 0%,var(--navy) 55%,var(--ink) 100%);
+  }
+  .beam{
+    position:absolute;top:0;left:0;width:min(1100px,105%);height:100%;
+    background:linear-gradient(100deg,rgba(246,208,138,.20),rgba(246,208,138,0) 65%);
+    clip-path:polygon(20% 0,26% 0,100% 55%,100% 100%,16% 100%);
+    pointer-events:none;
+  }
+  .hero .wrap{
+    position:relative;
+    display:grid;grid-template-columns:minmax(200px,300px) 1fr;
+    gap:clamp(28px,5vw,64px);align-items:center;
+    padding-top:clamp(40px,7vw,72px);padding-bottom:clamp(44px,7vw,76px);
+  }
+
+  /* ---------- door ---------- */
+  .door{
+    position:relative;width:100%;aspect-ratio:3/5.1;
+    border-radius:150px 150px 6px 6px;
+    background:linear-gradient(155deg,#1B2848 0%,#0D1730 58%,#0A1128 100%);
+    border:2px solid rgba(233,169,60,.34);
+    box-shadow:0 0 0 10px rgba(15,26,51,.65),0 40px 80px -30px #000;
+  }
+  .door::before,.door::after{
+    content:"";position:absolute;left:16%;right:16%;
+    border:1px solid rgba(243,236,220,.16);
+  }
+  .door::before{top:11%;height:36%;border-radius:90px 90px 4px 4px}
+  .door::after{top:53%;height:33%;border-radius:4px}
+  .knob{
+    position:absolute;right:11%;top:52%;width:11px;height:11px;border-radius:50%;
+    background:var(--amber);box-shadow:0 0 12px rgba(233,169,60,.9)
+  }
+  .crack{
+    position:absolute;top:2%;bottom:2%;right:-7px;width:9px;border-radius:6px;
+    background:linear-gradient(180deg,rgba(246,208,138,.35),var(--amber-lite) 40%,rgba(246,208,138,.35));
+    box-shadow:0 0 26px 8px rgba(233,169,60,.45);
+    animation:breathe 5.5s ease-in-out infinite;
+  }
+  @keyframes breathe{0%,100%{opacity:.72}50%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.crack{animation:none}}
+
+  /* ---------- hero copy ---------- */
+  .eyebrow{
+    margin:0 0 10px;font-family:var(--num);font-size:12px;font-weight:600;
+    letter-spacing:.3em;text-transform:uppercase;color:var(--amber)
+  }
+  h1{
+    margin:0;font-family:var(--display);font-weight:400;
+    font-size:clamp(38px,7.4vw,68px);line-height:1.12;letter-spacing:.01em;
+    text-wrap:balance;color:var(--kinari);
+    text-shadow:0 0 34px rgba(233,169,60,.22)
+  }
+  .lede{margin:16px 0 0;max-width:34em;color:#DCD6C7}
+  .nextdate{
+    margin:26px 0 0;padding-top:22px;border-top:1px solid var(--line-strong);
+    font-size:clamp(19px,2.7vw,26px);font-weight:700;line-height:1.5;color:var(--kinari)
+  }
+  .nextdate .dow{
+    display:inline-block;margin:0 .5em 0 .1em;padding:.05em .5em;border-radius:3px;
+    background:var(--amber);color:#0B1226;font-size:.62em;vertical-align:.22em
+  }
+  .nextdate small{display:block;font-size:14px;font-weight:400;color:var(--muted);margin-top:4px}
+
+  /* ---------- countdown ---------- */
+  .countdown{display:flex;flex-wrap:wrap;gap:clamp(16px,3.4vw,38px);margin:24px 0 0}
+  .cell{min-width:64px}
+  .cell .num{
+    display:block;font-family:var(--num);font-weight:600;font-variant-numeric:tabular-nums;
+    font-size:clamp(42px,8vw,72px);line-height:1;color:var(--amber-lite);
+    text-shadow:0 0 30px rgba(233,169,60,.35)
+  }
+  .cell .unit{
+    display:block;margin-top:8px;padding-top:7px;border-top:1px solid var(--line);
+    font-size:12px;letter-spacing:.22em;color:var(--muted)
+  }
+  .status{
+    margin:22px 0 0;font-size:clamp(20px,3.4vw,30px);font-weight:700;color:var(--amber-lite)
+  }
+  .status small{display:block;font-size:15px;font-weight:400;color:var(--muted);margin-top:6px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0;padding:0;list-style:none}
+  .pills li{
+    font-size:13px;padding:5px 13px;border-radius:999px;
+    border:1px solid var(--line-strong);color:var(--amber-lite)
+  }
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(44px,6vw,68px) 0;border-top:1px solid var(--line)}
+  .sec-head{margin:0 0 26px}
+  .sec-head .en{
+    display:block;font-family:var(--num);font-size:11px;font-weight:600;
+    letter-spacing:.3em;text-transform:uppercase;color:var(--amber)
+  }
+  .sec-head h2{
+    margin:4px 0 0;font-family:var(--display);font-weight:400;
+    font-size:clamp(21px,3.4vw,27px);letter-spacing:.02em
+  }
+  dl.info{display:grid;grid-template-columns:7.5em 1fr;gap:0;margin:0}
+  dl.info dt{
+    padding:14px 0;border-top:1px solid var(--line);
+    font-size:13px;letter-spacing:.14em;color:var(--muted)
+  }
+  dl.info dd{margin:0;padding:14px 0;border-top:1px solid var(--line)}
+  dl.info dd b{color:var(--amber-lite);font-weight:700}
+  .crew{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0 26px;margin:0;padding:0;list-style:none}
+  .crew li{padding:22px 0;border-top:2px solid var(--line-strong)}
+  .crew .genre{
+    display:block;font-size:12px;letter-spacing:.2em;color:var(--amber);margin-bottom:6px
+  }
+  .crew .who{font-size:20px;font-weight:700}
+  .crew-more{margin:24px 0 0;font-size:14px}
+  .crew-more a{color:var(--amber-lite)}
+  .faq{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(18px,3vw,34px);margin:0;padding:0;list-style:none}
+  .faq li{padding-left:20px;border-left:2px solid var(--line-strong)}
+  .faq .q{display:block;font-weight:700;margin-bottom:4px}
+  .faq .a{color:var(--muted);font-size:14px;line-height:1.8}
+  .access p{margin:0 0 10px;max-width:38em}
+  .access a{color:var(--amber-lite)}
+  .access a:focus-visible,.pills li:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  footer{
+    padding:34px 0 46px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:13px;line-height:1.9
+  }
+
+  @media (max-width:720px){
+    .hero .wrap{grid-template-columns:1fr;gap:30px}
+    .door{width:min(180px,52%)}
+    .beam{display:none}
+    dl.info{grid-template-columns:6em 1fr}
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <span class="mark">別世界<b>Bar</b></span>
+    <span class="tagline">2015年1月から大阪でつづく、趣味交流トークイベント</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="beam" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="door-stage" aria-hidden="true">
+      <div class="door"><span class="knob"></span><span class="crack"></span></div>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">Next Open</p>
+      <h1>次の扉が<br>開くまで</h1>
+      <p class="lede">珍スポ・団地・廃墟——その道のマニアの話を、お酒片手にゆるっと聞ける夜。マニアじゃなくても大丈夫、「ちょっと気になる」だけで入れる扉です。</p>
+      <p class="nextdate">2026年11月21日<span class="dow">土</span>19:00 開演
+        <small>18:30 開場／大阪・四貫島PORT</small>
+      </p>
+
+      <div class="countdown" id="countdown" role="timer" aria-live="off">
+        <div class="cell"><span class="num" id="cd-d">--</span><span class="unit">DAYS</span></div>
+        <div class="cell"><span class="num" id="cd-h">--</span><span class="unit">HOURS</span></div>
+        <div class="cell"><span class="num" id="cd-m">--</span><span class="unit">MIN</span></div>
+        <div class="cell"><span class="num" id="cd-s">--</span><span class="unit">SEC</span></div>
+      </div>
+      <p class="status" id="status" hidden></p>
+
+      <ul class="pills">
+        <li>1,000円</li><li>予約不要</li><li>途中入退場OK</li><li>聞くだけ参加OK</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="sec-head"><span class="en">Information</span><h2>開催情報</h2></div>
+    <dl class="info">
+      <dt>日時</dt><dd><b>2026年11月21日（土）19:00 開演</b>（18:30 開場）</dd>
+      <dt>会場</dt><dd>四貫島PORT（大阪市此花区）／阪神なんば線 千鳥橋駅すぐ</dd>
+      <dt>参加費</dt><dd>1,000円（当日受付でお支払い・1ドリンク別）</dd>
+      <dt>予約</dt><dd>不要。開場後はいつ来ても、途中で帰ってもOKです。</dd>
+      <dt>出演</dt><dd>別世界Barクルー（金原みわ・けんちん・ダミアンくん・Eluna）</dd>
+    </dl>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="en">Crew</span><h2>扉の向こうにいる4人</h2></div>
+    <ul class="crew">
+      <li><span class="genre">珍スポット</span><span class="who">金原みわ</span></li>
+      <li><span class="genre">団地</span><span class="who">けんちん</span></li>
+      <li><span class="genre">廃墟</span><span class="who">ダミアンくん</span></li>
+      <li><span class="genre">廃墟</span><span class="who">Eluna</span></li>
+    </ul>
+    <p class="crew-more"><a href="crew.html">4人のプロフィールを見る →</a></p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="en">First Time?</span><h2>はじめての方へ</h2></div>
+    <ul class="faq">
+      <li><span class="q">マニアじゃなくても入れますか？</span><span class="a">むしろ大歓迎です。知らないジャンルの話ほど、聞いてみると意外とクセになります。</span></li>
+      <li><span class="q">ひとりでも大丈夫？</span><span class="a">ひとりでふらっと来る方がほとんど。聞いているだけでもまったく問題ありません。</span></li>
+      <li><span class="q">遅れて行ってもいい？</span><span class="a">予約不要・途中入退場自由です。仕事帰りやお散歩ついでにどうぞ。</span></li>
+    </ul>
+  </section>
+
+  <section class="access">
+    <div class="sec-head"><span class="en">Access</span><h2>会場へのアクセス</h2></div>
+    <p><b>四貫島PORT</b>／大阪市此花区。阪神なんば線「千鳥橋」駅からすぐ。</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9B%9B%E8%B2%AB%E5%B3%B6PORT" target="_blank" rel="noopener">Googleマップで場所を見る →</a></p>
+  </section>
+
+  <footer>
+    別世界Bar｜珍スポ・団地・廃墟——新しい趣味の扉を開けるトークイベント。2015年1月から大阪で開催しています。<br>
+    次回開催：2026年11月21日（土）四貫島PORT。以降の日程は決まり次第このページを更新します。
+  </footer>
+</div>
+
+<script>
+  // ▼ 次回開催日を変えるときはこの3行だけ書き換えてください（日本時間）
+  var DOORS_OPEN = "2026-11-21T18:30:00+09:00"; // 開場
+  var SHOW_START = "2026-11-21T19:00:00+09:00"; // 開演（カウントダウンの基準）
+  var SHOW_END   = "2026-11-21T22:30:00+09:00"; // この時刻を過ぎたら「終了」表示に切り替え
+
+  (function () {
+    var open = Date.parse(DOORS_OPEN),
+        start = Date.parse(SHOW_START),
+        end = Date.parse(SHOW_END),
+        cd = document.getElementById("countdown"),
+        st = document.getElementById("status"),
+        d = document.getElementById("cd-d"),
+        h = document.getElementById("cd-h"),
+        m = document.getElementById("cd-m"),
+        s = document.getElementById("cd-s"),
+        pad = function (n) { return n < 10 ? "0" + n : String(n); };
+
+    function show(msg, sub) {
+      cd.hidden = true;
+      st.hidden = false;
+      st.innerHTML = msg + (sub ? '<small>' + sub + '</small>' : '');
+    }
+
+    function tick() {
+      var now = Date.now(), diff = start - now;
+      if (now >= end) {
+        show("今回の扉は閉じました。", "次回の日程が決まり次第、このページでお知らせします。ご来場ありがとうございました。");
+        return false;
+      }
+      if (now >= open) {
+        show("今夜、扉は開いています。", "四貫島PORTでお待ちしています。途中からでもどうぞ。");
+        return true;
+      }
+      cd.hidden = false;
+      st.hidden = true;
+      var sec = Math.floor(diff / 1000);
+      d.textContent = Math.floor(sec / 86400);
+      h.textContent = pad(Math.floor(sec / 3600) % 24);
+      m.textContent = pad(Math.floor(sec / 60) % 60);
+      s.textContent = pad(sec % 60);
+      return true;
+    }
+
+    if (tick()) { setInterval(tick, 1000); }
+  })();
+</script>
+</body>
+</html>
