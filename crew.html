@@ -38,8 +38,14 @@
   .wrap{max-width:1000px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
 
   .topbar{border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--navy),var(--ink))}
-  .topbar .wrap{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 18px;padding:18px 0}
-  .mark{font-family:var(--display);font-size:19px;letter-spacing:.04em}
+  .topbar .wrap{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    gap:10px 18px;padding:26px 0 24px;
+  }
+  .mark{
+    font-family:var(--display);font-size:clamp(34px,6.4vw,58px);line-height:1.08;
+    letter-spacing:.03em;text-shadow:0 0 28px rgba(233,169,60,.22)
+  }
   .mark b{color:var(--amber);font-weight:inherit}
   .backlink{font-size:13px}
 
