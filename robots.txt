@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kenchin4.github.io/betsusekai_bar/sitemap.xml
