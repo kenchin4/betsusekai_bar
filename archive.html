@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>別世界Bar アーカイブ</title>
+<meta name="description" content="別世界Bar 2015年の第1回から全回の開催記録。プレゼン・登壇者・オリジナルカレー・告知ポスト。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="別世界Bar アーカイブ">
+<meta property="og:description" content="別世界Bar 2015年の第1回から全回の開催記録。プレゼン・登壇者・オリジナルカレー・告知ポスト。">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Oswald:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    color-scheme: dark;
+    --ink:#070B16;
+    --navy:#0F1A33;
+    --navy-2:#16244A;
+    --amber:#E9A93C;
+    --amber-lite:#F6D08A;
+    --kinari:#F3ECDC;
+    --body:#DCD6C7;
+    --muted:#96A0BC;
+    --line:rgba(243,236,220,.14);
+    --line-strong:rgba(233,169,60,.38);
+    --jp:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+    --display:"Dela Gothic One","Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+    --num:"Oswald","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;background:var(--ink);color:var(--kinari);
+    font-family:var(--jp);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--amber-lite)}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 clamp(18px,5vw,40px)}
+
+  /* ---------- top bar ---------- */
+  .topbar{border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--navy),var(--ink))}
+  .topbar .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 18px;padding:22px 0 20px}
+  .mark{font-family:var(--display);font-size:clamp(30px,5.6vw,50px);line-height:1.08;letter-spacing:.03em;text-shadow:0 0 28px rgba(233,169,60,.22)}
+  .mark b{color:var(--amber);font-weight:inherit}
+  .nav{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px}
+  .nav a{text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:1px}
+  .nav a:hover{color:var(--amber)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;
+    background:radial-gradient(80% 70% at 30% 30%,rgba(233,169,60,.10),rgba(233,169,60,0) 62%),
+               linear-gradient(180deg,var(--ink),var(--navy) 60%,var(--ink));}
+  .hero .wrap{padding:clamp(32px,5vw,54px) 0 clamp(28px,4vw,40px)}
+  .doors{display:flex;gap:6px;align-items:flex-end;margin:0 0 26px;flex-wrap:wrap;max-width:560px}
+  .mini{position:relative;width:14px;aspect-ratio:3/5;border-radius:7px 7px 1px 1px;
+    background:linear-gradient(155deg,#1B2848,#0A1128);border:1px solid rgba(233,169,60,.30)}
+  .mini::after{content:"";position:absolute;top:12%;bottom:12%;right:-1px;width:2px;border-radius:2px;
+    background:var(--amber-lite);box-shadow:0 0 6px 2px rgba(233,169,60,.45);opacity:.8}
+  .mini:nth-child(3n){margin-bottom:4px}.mini:nth-child(5n){margin-bottom:7px}
+  .eyebrow{margin:0 0 10px;font-family:var(--num);font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--amber)}
+  h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(32px,6vw,54px);line-height:1.15;text-wrap:balance;text-shadow:0 0 34px rgba(233,169,60,.22)}
+  .lede{margin:16px 0 0;max-width:34em;color:var(--body)}
+  .stats{display:flex;flex-wrap:wrap;gap:0;margin:28px 0 0;padding:0;list-style:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stats li{flex:1 1 130px;padding:14px 18px 12px 0;border-right:1px solid var(--line);margin-right:18px}
+  .stats li:last-child{border-right:0;margin-right:0}
+  .stats .n{display:block;font-family:var(--num);font-size:clamp(28px,4vw,38px);font-weight:600;line-height:1;color:var(--amber-lite);font-variant-numeric:tabular-nums}
+  .stats .n small{font-size:.5em;margin-left:3px;color:var(--amber)}
+  .stats .l{display:block;font-size:12px;letter-spacing:.08em;color:var(--muted);margin-top:6px}
+
+  /* ---------- controls ---------- */
+  .controls{position:sticky;top:0;z-index:5;background:rgba(7,11,22,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .controls .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;padding:12px 0}
+  .field{display:flex;align-items:center;gap:8px;min-width:0}
+  .field label{font-size:12px;letter-spacing:.06em;color:var(--muted);white-space:nowrap}
+  input[type=search],select{
+    font:inherit;font-size:14px;color:var(--kinari);background:var(--navy);
+    border:1px solid var(--line-strong);border-radius:6px;padding:7px 10px;min-height:38px}
+  input[type=search]{flex:1 1 220px;min-width:180px}
+  input[type=search]::placeholder{color:var(--muted)}
+  select{padding-right:28px;appearance:none;-webkit-appearance:none;
+    background-image:linear-gradient(45deg,transparent 50%,var(--amber) 50%),linear-gradient(135deg,var(--amber) 50%,transparent 50%);
+    background-position:calc(100% - 15px) 55%,calc(100% - 10px) 55%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+  .search{flex:1 1 240px}
+  .count{font-family:var(--num);font-size:14px;letter-spacing:.06em;color:var(--muted);margin-left:auto;font-variant-numeric:tabular-nums}
+  .count b{color:var(--amber-lite);font-weight:600}
+  .reset{font:inherit;font-size:13px;color:var(--amber-lite);background:none;border:1px solid var(--line-strong);border-radius:999px;padding:5px 13px;cursor:pointer}
+  .reset:hover{background:rgba(233,169,60,.12)}
+
+  /* ---------- year jump ---------- */
+  .years{display:flex;flex-wrap:wrap;gap:6px;padding:18px 0 4px;margin:0;list-style:none}
+  .years a{font-family:var(--num);font-size:13px;letter-spacing:.06em;text-decoration:none;color:var(--muted);padding:3px 9px;border:1px solid var(--line);border-radius:999px}
+  .years a:hover{color:var(--amber-lite);border-color:var(--line-strong)}
+  .years a.off{opacity:.3;pointer-events:none}
+
+  /* ---------- list ---------- */
+  .list{padding:8px 0 40px}
+  .year{padding:34px 0 8px;border-bottom:2px solid var(--line-strong);margin-bottom:6px;
+    display:flex;align-items:baseline;gap:14px}
+  .year h2{margin:0;font-family:var(--num);font-weight:600;font-size:clamp(30px,4.6vw,42px);letter-spacing:.04em;line-height:1;color:var(--amber)}
+  .year span{font-size:13px;color:var(--muted);letter-spacing:.06em}
+  .ev{display:grid;grid-template-columns:132px 1fr;gap:clamp(14px,2.6vw,30px);padding:26px 0;border-bottom:1px solid var(--line);scroll-margin-top:80px}
+  .ev:target{background:linear-gradient(90deg,rgba(233,169,60,.08),transparent 60%)}
+  .no{font-family:var(--num);line-height:1}
+  .no .k{display:block;font-size:12px;letter-spacing:.2em;color:var(--amber);font-weight:600}
+  .no .v{display:block;font-size:44px;font-weight:600;color:var(--kinari);font-variant-numeric:tabular-nums;margin-top:2px}
+  .no .v.sp{font-size:22px;line-height:1.2;margin-top:8px;color:var(--amber-lite)}
+  .no time{display:block;margin-top:10px;font-size:15px;letter-spacing:.06em;color:var(--body);font-variant-numeric:tabular-nums}
+  .no .dow{color:var(--muted);font-size:12px;margin-left:3px}
+  .meta{display:flex;flex-wrap:wrap;gap:6px 8px;margin:0 0 12px;padding:0;list-style:none}
+  .chip{font-size:12px;letter-spacing:.04em;padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--body);line-height:1.6}
+  .chip.venue{border-color:var(--line-strong);color:var(--amber-lite)}
+  .chip.online{border-style:dashed}
+  .chip.special{background:rgba(233,169,60,.14);border-color:var(--line-strong);color:var(--amber-lite)}
+  .prog{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+  .prog li{display:grid;grid-template-columns:1.6em 1fr;gap:6px;align-items:baseline}
+  .prog .c{font-family:var(--num);font-size:13px;color:var(--amber);font-weight:600;letter-spacing:.04em;padding-top:2px}
+  .prog .t{font-size:17px;font-weight:700;line-height:1.5;color:var(--kinari)}
+  .prog .by{display:block;font-size:14px;color:var(--muted);font-weight:400;margin-top:1px}
+  .prog .by::before{content:"— ";color:var(--line-strong)}
+  .prog.free .t{font-weight:500;font-size:15.5px;color:var(--body)}
+  .note{margin:10px 0 0;font-size:14px;color:var(--muted)}
+  .curry{display:flex;gap:10px;align-items:baseline;margin:14px 0 0;font-size:14.5px;color:var(--body);padding:8px 12px;
+    border-left:3px solid var(--amber);background:rgba(233,169,60,.06);border-radius:0 6px 6px 0}
+  .curry .k{font-family:var(--num);font-size:11px;letter-spacing:.2em;color:var(--amber);white-space:nowrap;font-weight:600;text-transform:uppercase}
+  .curry.off{border-left-color:var(--line);background:transparent;color:var(--muted)}
+  .links{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0;padding:0;list-style:none}
+  .links a{display:inline-block;font-size:12.5px;text-decoration:none;padding:4px 12px;border-radius:999px;border:1px solid var(--line-strong);color:var(--amber-lite)}
+  .links a:hover{background:rgba(233,169,60,.12)}
+  .links a.sub{border-color:var(--line);color:var(--body)}
+  .empty{padding:48px 0;color:var(--muted);text-align:center}
+  .empty b{display:block;color:var(--kinari);font-size:18px;margin-bottom:6px}
+
+  footer{padding:30px 0 50px;color:var(--muted);font-size:13px;line-height:1.9;border-top:1px solid var(--line)}
+  footer a{color:var(--amber-lite)}
+
+  @media (max-width:640px){
+    .ev{grid-template-columns:1fr;gap:10px;padding:22px 0}
+    .no{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+    .no .k{display:none}
+    .no .v{font-size:30px;margin:0}
+    .no .v::before{content:"第";font-size:13px;margin-right:2px;color:var(--amber)}
+    .no .v::after{content:"回";font-size:13px;margin-left:2px;color:var(--amber)}
+    .no .v.sp{font-size:18px}
+    .no .v.sp::before,.no .v.sp::after{content:none}
+    .no time{margin:0}
+    .stats li{flex:1 1 38%;padding-right:12px;margin-right:12px}
+    .stats li:nth-child(2n){border-right:0;margin-right:0}
+    .count{margin-left:0;width:100%}
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <span class="mark">別世界<b>Bar</b></span>
+    <nav class="nav">
+      <a href="./">次回開催・カウントダウン</a>
+      <a href="crew.html">クルー紹介</a>
+    </nav>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="doors" id="doors" aria-hidden="true"></div>
+    <p class="eyebrow">Archive</p>
+    <h1>これまでに開いた扉</h1>
+    <p class="lede">2015年1月、北堀江の小さなバーから始まった別世界Bar。誰がどんな「別世界」を持ち込んだのか、そしてその夜どんなカレーが出たのか。全回の記録です。</p>
+    <ul class="stats" id="stats"></ul>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="wrap">
+    <div class="field search"><input type="search" id="q" placeholder="プレゼン・登壇者・カレー・会場で探す" aria-label="キーワード検索" autocomplete="off"></div>
+    <div class="field"><label for="year">年</label><select id="year"><option value="">すべて</option></select></div>
+    <div class="field"><label for="venue">会場</label><select id="venue"><option value="">すべて</option></select></div>
+    <div class="field"><label for="cat">方式</label><select id="cat">
+      <option value="">すべて</option>
+      <option value="venue">現地開催</option>
+      <option value="hybrid">配信＋現地</option>
+      <option value="online">配信のみ</option>
+      <option value="special">周年・スペシャル</option>
+    </select></div>
+    <span class="count" id="count"></span>
+    <button class="reset" id="reset" type="button" hidden>条件をクリア</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <ul class="years" id="years"></ul>
+  <div class="list" id="list"></div>
+  <footer>
+    別世界Bar｜珍スポ・団地・廃墟——新しい趣味の扉を開けるトークイベント（大阪）。<br>
+    記録はクルーの控えをもとにしています。抜けや誤りがあれば、<a href="https://x.com/kenchin" target="_blank" rel="noopener">@kenchin</a> までそっと教えてください。
+  </footer>
+</div>
+
+<script>
+/* =========================================================================
+   開催記録データ（新しい回を上に追加する）
+   1回 = 1行。項目:
+     no      : 回数（数字）。番外編は null
+     date    : "YYYY-MM-DD"
+     venue   : 会場名
+     style   : 開催方式の表記（そのまま表示される）
+     cat     : 絞り込み用の分類 "venue"(現地) / "hybrid"(配信+現地) / "online"(配信のみ) / "special"(周年・SP)
+     programs: [{"title":"プレゼン名","by":"登壇者"}, ...]  順番どおりに①②③…が付く
+     note    : 補足（オープニングアクト、物販など）。無ければ ""
+     curry   : オリジナルカレー。無ければ ""、中止は "※コロナのため中止" のように ※ で始める
+     post    : 告知ポスト(X)のURL。無ければ ""
+     links   : 関連ポストのURL配列（当日の写真・レポートなど）。無ければ []
+   例:
+   {"no":103,"date":"2026-11-21","venue":"四貫島PORT","style":"現地のみ","cat":"venue",
+    "programs":[{"title":"○○の世界","by":"△△"}],"note":"","curry":"","post":"","links":[]},
+   ========================================================================= */
+const EVENTS = [
+{"no":102,"date":"2026-08-27","venue":"四貫島PORT","style":"現地のみ","cat":"venue","programs":[{"title":"「香港ディズニーランドの世界」","by":"カメちゃん"},{"title":"「かわいい探検隊」","by":"Towers ＆ 砂糖花"},{"title":"「ようこそ指定ごみ袋の世界」","by":"あまじろー"}],"note":"","curry":"あかんやつカレー","post":"https://x.com/kenchin/status/2093694101262909894","links":["https://x.com/sato_h728/status/2093698214583284037"]},
+{"no":101,"date":"2026-05-23","venue":"四貫島PORT","style":"現地のみ","cat":"venue","programs":[{"title":"カレーと共に振り返る別世界Bar後編","by":"Eluna＆金原みわ"},{"title":"90年代の遊園地〜関西編〜","by":"mikko（リモート出演）"},{"title":"街灯","by":"Mei 街角の照明"}],"note":"","curry":"ジェットコースターカレー(街灯付き)","post":"https://x.com/kenchin/status/2058167523066134837","links":["https://x.com/zou_da_zou/status/2058344821627166895","https://x.com/kuwamocchan/status/2058161807211331792"]},
+{"no":100,"date":"2026-01-17","venue":"四貫島PORT","style":"現地のみ","cat":"venue","programs":[{"title":"アルミ缶潰しの楽しみ","by":"だみあんくん"},{"title":"カレーと共に振り返る別世界Bar前編","by":"Eluna"},{"title":"子供と珍スポ","by":"金原みわ"},{"title":"万博語辞典","by":"けんちん"}],"note":"","curry":"万博ヨルダンカレー","post":"https://x.com/kenchin/status/2012545640547717377","links":["https://x.com/elunation/status/2057785050121519519"]},
+{"no":99,"date":"2023-05-27","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"台湾の団地マニア、コロナ下の3年間と3年ぶりの台湾訪問","by":"tamazo"},{"title":"廃墟探索者を分析する","by":"Eluna"}],"note":"","curry":"台湾牛肉麺風特製カレー","post":"https://x.com/kenchin/status/1662454882409025536","links":["https://x.com/tamazo919build2/status/1662415168666742786","https://x.com/haikyo07/status/1662632737315110913?s=20"]},
+{"no":98,"date":"2023-04-29","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"淀川の車止め","by":"CAPO"},{"title":"シ国変路","by":"左京"}],"note":"","curry":"高知満載カレー","post":"https://x.com/kenchin/status/1652304073474048000","links":["https://x.com/tamazo919build2/status/1652475791782088704"]},
+{"no":97,"date":"2023-03-25","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"お寺ポエムとカエル寺","by":"mi2ru"},{"title":"電話ボックスとレトロ自販機","by":"えぬびぃ"}],"note":"","curry":"レトロ自販機風カレーホットサンド付","post":"https://x.com/kenchin/status/1639652720109051904","links":["https://x.com/tamazo919build2/status/1639587695369523200"]},
+{"no":96,"date":"2023-02-18","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"奇食イロイロ","by":"金原みわ"},{"title":"ザ・ベストテン","by":"桂りょうば"}],"note":"","curry":"黒柳徹子さんレシピカレー","post":"https://x.com/kenchin/status/1626949611687649280","links":["https://x.com/elunation/status/1638458966882811906?s=20"]},
+{"no":95,"date":"2023-01-27","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"電気風呂","by":"けんちん"},{"title":"団地の給水塔","by":"UC"}],"note":"","curry":"青空給水塔カレー","post":"https://x.com/kenchin/status/1619317858307301377","links":["https://x.com/broncoj2000/status/1620005888366084098","https://x.com/elunation/status/1626787486461747201?s=20"]},
+{"no":94,"date":"2022-12-17","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"昭和レトロ温泉鑑賞","by":"ハチまさ"},{"title":"別世界Bar2022振り返り〜ゆく年くる年〜","by":"別世界クルー"}],"note":"","curry":"タコさん温泉カレー・懐かしのバターケーキ","post":"https://x.com/kenchin/status/1604105056563105792","links":["https://x.com/pairitan/status/1604138783636541440","https://x.com/onmusiconlife/status/1604128031937007616","https://x.com/elunation/status/1619186648398565377?s=20","https://x.com/elunation/status/1604307811537940480?s=20"]},
+{"no":93,"date":"2022-10-29","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"ダイエートリビア","by":"スーパーゆかり"},{"title":"80年代美少女漫画","by":"小林紗良(こばしょー)｜菅野博之｜マニアパレル"}],"note":"","curry":"家庭用にしては本格的すぎるダイエーおすすめレシピを再現したダイエーカレー","post":"https://x.com/kenchin/status/1586364309327650817","links":["https://x.com/elunation/status/1603597043796430848"]},
+{"no":92,"date":"2022-09-24","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"お寺ポエムアワード","by":"mi2ru"},{"title":"街路灯","by":"Mei 街角の照明"}],"note":"","curry":"街灯風牛すじ煮込み欧風カレー","post":"https://x.com/kenchin/status/1573673636501737472","links":["https://x.com/towers1961101/status/1573683657981964289","https://www.instagram.com/p/Ci45VqnvZwB/?igshid=YTgzYjQ4ZTY%3D&img_index=6"]},
+{"no":91,"date":"2022-08-13","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"カブトガニ","by":"Eluna"},{"title":"旅先銭湯","by":"松本康治"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1558446755645009920","links":["https://x.com/elunation/status/1558811315594215430?s=20"]},
+{"no":90,"date":"2022-06-25","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"八画文化会館の軌跡","by":"石川｜酒井"},{"title":"妄想スライドショー","by":"ビロくん｜UC"}],"note":"","curry":"八角八画カレー","post":"https://x.com/kenchin/status/1540700751919341569","links":["https://x.com/kooooge/status/1540642490176643072","https://x.com/elunation/status/1573294371948339201?s=20","https://x.com/hakkaku_culture/status/1540952028234584064?s=20","https://x.com/zou_da_zou/status/1540640027478474752?s=20"]},
+{"no":89,"date":"2022-05-21","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"アポカリプス廃墟","by":"toshibo｜あお｜saho."}],"note":"","curry":"瓦礫カレー・廃墟カクテル","post":"https://x.com/kenchin/status/1528017321385545728","links":["https://x.com/zou_da_zou/status/1527951734207037441","https://x.com/elunation/status/1540501595338977280?s=20","https://x.com/mayu17852522/status/1528188120021073921?s=20","https://x.com/elunation/status/1528152340674789378?s=20"]},
+{"no":88,"date":"2022-04-23","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"空想地図","by":"りーべ"},{"title":"コープ","by":"なな爺"}],"note":"","curry":"地図(チーズ)カレー・サルミアッキ","post":"https://x.com/kenchin/status/1517997976148271104","links":["https://x.com/elunation/status/1527143393587253248?s=20","https://x.com/zou_da_zou/status/1527924215500128256?s=20"]},
+{"no":87,"date":"2022-02-26","venue":"四貫島PORT","style":"YouTube配信＋現地","cat":"hybrid","programs":[{"title":"秀和レジデンス","by":"haco"},{"title":"シャッターアート","by":"金原みわ"}],"note":"","curry":"和風のグリーンカレー","post":"https://x.com/kenchin/status/1497580468740313090","links":["https://x.com/elunation/status/1517301903889436672?s=20","https://x.com/vMMxsusbKmgO6Hl/status/1497568680594780163?s=20","https://x.com/elunation/status/1497398615719161856?s=20"]},
+{"no":86,"date":"2021-12-18","venue":"四貫島PORT","style":"ツイキャス配信＋現地","cat":"hybrid","programs":[{"title":"駅の矢印","by":"haco"},{"title":"年越し宗谷","by":"なな爺"}],"note":"","curry":"生野銀山シュトーレン・虫食","post":"https://x.com/kenchin/status/1472198731110170628","links":["https://x.com/elunation/status/1472556889452204032"]},
+{"no":85,"date":"2021-11-13","venue":"四貫島PORT","style":"ツイキャス配信＋現地","cat":"hybrid","programs":[{"title":"お寺ポエム コロナ編 #なんとも言えない気持ち","by":"mi2ru"},{"title":"街角狸","by":"むらたぬき"},{"title":"団地","by":"けんちん"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1459510711369932801","links":[]},
+{"no":84,"date":"2021-10-30","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"ゆる看板鑑賞","by":"金原みわ"},{"title":"現場活動（自然災害編）","by":"よごれん"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1454436925612310533","links":["https://x.com/yogoren/status/1452619322182889477?s=20"]},
+{"no":83,"date":"2021-09-25","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"競艇場観光","by":"金原みわ"},{"title":"廃校の黒板","by":"だみあん君"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1441756923506745345","links":[]},
+{"no":82,"date":"2021-08-23","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"ビルトイン地蔵尊選手権","by":"makes no sense"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1429811443424129024","links":[]},
+{"no":81,"date":"2021-07-24","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"万博関連遺跡","by":"井上謙二"},{"title":"趣味って何？","by":"けんちん"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1418928580516454400","links":[]},
+{"no":80,"date":"2021-06-26","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"空想地図","by":"りーべ・なな爺"},{"title":"醤油プリンはウニの味","by":"金原みわ・Eluna"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1408804459640070147","links":[]},
+{"no":79,"date":"2021-05-14","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"線路配線","by":"JR西日本／"},{"title":"心に残る海外の珍スポット～アジア編～","by":"金原みわ"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1393212937557348354","links":[]},
+{"no":78,"date":"2021-04-17","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"セブンイレブンおにぎり７つの秘密 シーチキン編","by":"高下龍司 (koge)"},{"title":"廃便所の楽しみ方","by":"雪村 柚鈴"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1383406434860240901","links":["https://x.com/yukimura_yuzu/status/1383334163697201157?s=20"]},
+{"no":77,"date":"2021-03-17","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"集め始めたけど全然集まらないコレクション","by":"金原みわ"},{"title":"電気風呂","by":"けんちん"},{"title":"ベランダから見るスズメ","by":"UC"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1372925756985073666","links":["https://x.com/watertowerUC/status/1372851874072694793?s=20"]},
+{"no":76,"date":"2021-02-19","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"山奥のヤバイ物件廃墟","by":"Eluna"},{"title":"👹滅の刃のあかんやつ","by":"金原みわ"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1362768539711467528","links":["https://x.com/zou_da_zou/status/1362515384499273729?s=20","https://x.com/elunation/status/1362348038262575105?s=20"]},
+{"no":75,"date":"2021-01-22","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"火災の恐ろしさプレゼン","by":"だみあん君"},{"title":"蕎麦がきプレゼン","by":"石井公二"}],"note":"","curry":"スパイスカレーうどん(配信)","post":"https://x.com/kenchin/status/1352622845206007808?s=20","links":["https://x.com/rakuda2010/status/1352620745084477441?s=20"]},
+{"no":74,"date":"2020-12-18","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"猫プレゼン","by":"金原みわ"},{"title":"廃墟✖️ゲーム","by":"だみあん君"},{"title":"座談会 サンタにまつわるエトセトラ","by":"別世界Barクルー"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1339937211001622528?s=20","links":[]},
+{"no":73,"date":"2020-11-28","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"絶対あかんやつ","by":"金原みわ"},{"title":"名古屋の博覧会","by":"井上謙二"},{"title":"ドイツ製鉄所に行ってみた","by":"Bob爺"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1332672172402253824?s=20","links":[]},
+{"no":72,"date":"2020-10-24","venue":"四貫島PORT","style":"ツイキャス配信＋現地","cat":"hybrid","programs":[{"title":"偽装警察24時","by":"前畑温子"},{"title":"奇食","by":"金原みわ×Eluna"},{"title":"ラブホテル","by":"逢根あまみ"}],"note":"","curry":"イナゴの炊き込みご飯","post":"https://x.com/kenchin/status/1319999140982472704?s=20","links":[]},
+{"no":71,"date":"2020-09-26","venue":"四貫島PORT","style":"YouTube配信のみ","cat":"online","programs":[{"title":"GO to 過酷旅","by":"なな爺"},{"title":"団地のやばい貼り紙","by":"tamazo"},{"title":"男根様","by":"金原みわ"}],"note":"","curry":"魯肉飯(配信)","post":"https://x.com/kenchin/status/1309855047988080640?s=20","links":[]},
+{"no":70,"date":"2020-08-29","venue":"四貫島PORT","style":"YouTube配信のみ","cat":"online","programs":[{"title":"お寺ポエム","by":"mi2ru"},{"title":"資料から廃墟を楽しむ","by":"ハチまさ"}],"note":"","curry":"マヤカンカレー(配信)","post":"https://x.com/kenchin/status/1299696243485085696?s=20","links":[]},
+{"no":69,"date":"2020-07-25","venue":"四貫島PORT","style":"YouTube配信のみ","cat":"online","programs":[{"title":"雑草食 夏編","by":"金原みわ"},{"title":"ドムドムハンバーガー","by":"けんちん"},{"title":"座談会 怖い話","by":"別世界Barクルー"}],"note":"","curry":"雑草食(配信)","post":"https://x.com/kenchin/status/1287030912031457285?s=20","links":[]},
+{"no":68,"date":"2020-06-20","venue":"四貫島PORT","style":"YouTube配信のみ","cat":"online","programs":[{"title":"商店街アポカリプス","by":"だみあん君"},{"title":"たぬきケーキ概論","by":"むらたぬき"},{"title":"2020年 日本全国 最新飲食チェーン店レポート","by":"Bubble-B"}],"note":"","curry":"狸カレー(配信)","post":"https://x.com/kenchin/status/1274363678133895173?s=20","links":[]},
+{"no":67,"date":"2020-05-23","venue":"四貫島PORT","style":"YouTube配信のみ","cat":"online","programs":[{"title":"雑草食","by":"金原みわ"},{"title":"廃墟","by":"Bob爺"},{"title":"ゴシック＆ロリータ","by":"Triple Fortune"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1264200871350464519?s=20","links":[]},
+{"no":66,"date":"2020-04-25","venue":"四貫島PORT","style":"YouTube配信のみ","cat":"online","programs":[{"title":"珍スポ","by":"金原みわ"},{"title":"シャッター商店街","by":"だみあん君"},{"title":"おうちで別世界","by":"けんちん"},{"title":"エイプリルフール","by":"Eluna"}],"note":"","curry":"※コロナのため中止","post":"https://x.com/kenchin/status/1254043372253110272?s=20","links":[]},
+{"no":65,"date":"2020-03-07","venue":"四貫島PORT","style":"ツイキャス配信のみ","cat":"online","programs":[{"title":"東横イン","by":"けんちん"},{"title":"廃墟","by":"Eluna"},{"title":"探索装備品","by":"だみあん君"},{"title":"珍スポ","by":"金原みわ"}],"note":"","curry":"男根カレー(配信)","post":"https://x.com/kenchin/status/1236282626467450881?s=20","links":["https://x.com/zou_da_zou/status/1236284546628218881?s=20"]},
+{"no":64,"date":"2020-02-15","venue":"四貫島PORT","style":"イベント（周年）夜","cat":"special","programs":[{"title":"懐パチ探訪","by":"栄華"},{"title":"仮装","by":"あっ、きのこ"},{"title":"給水塔","by":"UCくん"}],"note":"","curry":"","post":"https://x.com/kenchin/status/1226811631197282306?s=20","links":["https://x.com/hyoushiqui/status/1228687118546849792?s=20"]},
+{"no":63,"date":"2020-02-15","venue":"味園ビルのなんば紅鶴","style":"イベント（周年）昼","cat":"special","programs":[{"title":"ファンシー絵みやげ","by":"山下メロ"},{"title":"パチンコ編愛バンド","by":"テンゴ"},{"title":"事件現場","by":"よごれん"}],"note":"","curry":"なし","post":"https://x.com/kenchin/status/1228588938706612226?s=20","links":["https://x.com/inchorin/status/1227955849190088705?s=20"]},
+{"no":62,"date":"2020-01-18","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"すごいぞ成都・重慶","by":"ANI・はらわたちゅんこ"},{"title":"大阪のええ文字","by":"松村大輔"},{"title":"神社の裏側","by":"Mr.般若"}],"note":"","curry":"黒猫スペシャルカレー","post":"https://x.com/kenchin/status/1218529692463951872?s=20","links":["https://x.com/elunation/status/1218441819152715782?s=20"]},
+{"no":61,"date":"2019-12-07","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"裏ハメOL","by":"らんちゃん"},{"title":"コンドーム自販機","by":"ひらた"},{"title":"万博","by":"井上謙二"}],"note":"","curry":"顔ハメカレーとコンドームっぽいチョコ","post":"","links":["https://x.com/zou_da_zou/status/1203683867980267525?s=20","https://x.com/darenookagede/status/1203263034577211392?s=20"]},
+{"no":60,"date":"2019-11-09","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"水族館探訪","by":"金原みわ"},{"title":"雑誌獅子王に迫る","by":"yasu-pea"},{"title":"標しくぃ","by":"koge"}],"note":"","curry":"標しくぃカレー","post":"https://x.com/kenchin/status/1193151925916553216?s=20","links":["https://x.com/hyoushiqui/status/1193163532247826433?s=20","https://www.instagram.com/p/B4pECnYAQeW/?igshid=vl9b6d929p9c"]},
+{"no":59,"date":"2019-10-26","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"台湾のゲタバキ団地","by":"tamazo"},{"title":"西長堀団地は府営！？","by":"UCくん"},{"title":"ゲタバキ団地","by":"けんちん"}],"note":"団地祝詞","curry":"ゲタバキ団地カレー","post":"https://x.com/kenchin/status/1188093140084785152?s=20","links":["https://x.com/damian_kun_/status/1188126633531604992?s=20","https://x.com/hyoushiqui/status/1188078135935262721?s=20","https://x.com/towers1961101/status/1188076916718260224?s=20"]},
+{"no":58,"date":"2019-09-21","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"ダイエー 中内㓛の一生","by":"スーパーゆかり"},{"title":"お寺ポエム","by":"mi2ru"},{"title":"地下街への招待","by":"Towers"}],"note":"","curry":"やすぴーさんの新米を使った秋カレー","post":"https://x.com/kenchin/status/1175397623416541185?s=20","links":["https://x.com/darenookagede/status/1175375289473355776?s=20","https://x.com/takipon1/status/1175568800093097984?s=20","https://x.com/hyoushiqui/status/1175404490964365312?s=20"]},
+{"no":57,"date":"2019-08-31","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"片手袋研究","by":"石井公二"},{"title":"金原みわのやってみた","by":"金原みわ"},{"title":"婚活アイドル インタビュー&握手会","by":"婚活アイドル きっしー"}],"note":"","curry":"片手袋チーズカレー・タピオカミルクティー","post":"https://x.com/kenchin/status/1167786723486519296?s=20","links":["https://x.com/elunation/status/1175235865141903360?s=20","https://x.com/rakuda2010/status/1167808771994730496?s=20","https://x.com/sekai_cookie/status/1167785720242561024?s=20","https://x.com/sasigoro7/status/1167750674932613120?s=20","https://x.com/ume_43/status/1167747363827355648?s=20"]},
+{"no":56,"date":"2019-07-20","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"長野県の珍スポ","by":"金原みわ"},{"title":"姫路博覧会とモノレール","by":"井上謙二"},{"title":"交番放浪記","by":"ビロくん"}],"note":"","curry":"岡本太郎チックなキーマカレー","post":"https://x.com/kenchin/status/1152570148949090304?s=20","links":["https://x.com/elunation/status/1167650063838924805?s=20"]},
+{"no":55,"date":"2019-06-22","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"標しくぃ","by":"koge"},{"title":"都市部に眠る化石群in梅田","by":"yasu-pea"},{"title":"歩行者天国は、文化","by":"内海皓平"},{"title":"パチンコ珍本案内","by":"栄華"}],"note":"","curry":"パチンコカレー","post":"https://x.com/kenchin/status/1142419969675628549?s=20","links":["https://x.com/elunation/status/1152102795387924480?s=20","https://x.com/henaieika/status/1142580118411329536?s=20","https://x.com/mi2ru/status/1142444379828817920?s=20"]},
+{"no":54,"date":"2019-05-18","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"マッチ","by":"小野さん"},{"title":"珍スポ","by":"をかしくん"},{"title":"#お寺ポエム エピソード6","by":"mi2ru"}],"note":"※ ふらっと銭湯さんブース 物販","curry":"魯肉飯を添えたカレー","post":"","links":["https://x.com/elunation/status/1139141348479553537?s=20"]},
+{"no":53,"date":"2019-04-20","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"電気風呂レセプション♨","by":"けんちん・金原みわ・JP-SUPER / 松村大輔・藤本健太郎 / 八画文化会館 石川編集長 / ユッカバッファロー"}],"note":"","curry":"※スペシャルのためお休み","post":"https://x.com/kenchin/status/1117006915110752258?s=20","links":[]},
+{"no":52,"date":"2019-03-16","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"ミニコミ寄席","by":"シカク たけしげみゆき"},{"title":"台湾のインスタ映えスポット","by":"tamazo"},{"title":"珍スポ","by":"金原みわ"},{"title":"EXPO遺産","by":"井上 謙二"}],"note":"","curry":"菜の花とタケノコとチキンの春カレー","post":"https://x.com/kenchin/status/1106913058167754752?s=20","links":["https://x.com/elunation/status/1107079131227799554?s=20"]},
+{"no":51,"date":"2019-02-23","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"四国の廃墟","by":"シ國旅団"},{"title":"AMラジオステッカー","by":"yasu-pea"},{"title":"地下街への招待","by":"Towers"}],"note":"","curry":"シ國カレー","post":"https://x.com/kenchin/status/1099301850438807557?s=20","links":["https://x.com/elunation/status/1099376519468613632?s=20","https://x.com/towers1961101/status/1099648355523735553?s=20"]},
+{"no":50,"date":"2019-01-19","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"#お寺ポエム エピソード5","by":"mi2ru"},{"title":"電気風呂","by":"けんちん"},{"title":"昭和遺産ラブホテル『ある』の概念の話","by":"逢根あまみ"}],"note":"","curry":"イエロータイカレー","post":"https://x.com/kenchin/status/1086620311049490432?s=20","links":["https://x.com/elunation/status/1086636458192977921?s=20","https://x.com/aineamami/status/1375818209614438407?s=20","https://x.com/mi2ru/status/1086624564837109761?s=20"]},
+{"no":49,"date":"2018-12-15","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"個展「だんだんリビン」開催記念トークイベント / 見る団地、描く団地、住む団地","by":"石山さやかさんSP / けんちん / UC"}],"note":"","curry":"スターハウスカレー","post":"https://x.com/kenchin/status/1073361456869953537?s=20","links":["https://x.com/onmusiconlife/status/1484869494380335106?s=20"]},
+{"no":48,"date":"2018-11-17","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"大阪万博映画のあれこれ","by":"井上 謙二"},{"title":"給水塔の探し方・巡り方","by":"UC"},{"title":"勝手に観光協会 津編","by":"金原みわ（けんちん）"}],"note":"","curry":"懐かしい昭和のカレー","post":"https://x.com/kenchin/status/1063786637040078848?s=20","links":["https://x.com/ume_43/status/1063747018928009217?s=20"]},
+{"no":47,"date":"2018-10-20","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"もがけコンビニ","by":"yasu-pea"},{"title":"#お寺ポエム エピソード5","by":"mi2ru"},{"title":"ローカルバーガー","by":"八画文化会館 石川編集長"}],"note":"","curry":"なし","post":"https://x.com/kenchin/status/1053640897080918016?s=20","links":[]},
+{"no":46,"date":"2018-09-22","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"ダイエー","by":"スーパーゆかり"},{"title":"イケフェス","by":"tamazo"},{"title":"安藤忠雄","by":"yasu-pea"},{"title":"別世界デュエル","by":"MOB"}],"note":"","curry":"キーマカレー","post":"https://x.com/kenchin/status/1043498717632847874?s=20","links":["https://x.com/ume_43/status/1043454823998181376?s=20"]},
+{"no":45,"date":"2018-08-25","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"電気風呂","by":"けんちん"},{"title":"変わり種 自動販売機","by":"yasu-pea"},{"title":"珍スポ","by":"金原みわ"}],"note":"","curry":"夏野菜のグリーンカレー","post":"https://x.com/kenchin/status/1033344638785007617?s=20","links":["https://x.com/ume_43/status/1033351607444881408?s=20"]},
+{"no":44,"date":"2018-07-28","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"在宅珍スポット","by":"金原みわ"},{"title":"廃墟","by":"源道寺梅蔵"},{"title":"廃遊園地＆写真講座","by":"だみあん君"}],"note":"","curry":"廃墟カレー2018","post":"https://x.com/kenchin/status/1023195738103144448?s=20","links":["https://x.com/elunation/status/1022765998640848896?s=20"]},
+{"no":43,"date":"2018-06-23","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"お寺ポエム#バエる壁","by":"mi2ru"},{"title":"シカク","by":"タケシゲさん"},{"title":"FMラジオステッカー","by":"yas-pea"}],"note":"","curry":"","post":"https://x.com/kenchin/status/1010561868191051776?s=20","links":[]},
+{"no":42,"date":"2018-05-26","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"クソ写真デュエル","by":"ビロくん"},{"title":"コンビニのその後","by":"yas-pea"},{"title":"エレベーターボタン","by":"エレボタ"}],"note":"","curry":"","post":"https://x.com/kenchin/status/1000363122656395265?s=20","links":[]},
+{"no":41,"date":"2018-04-21","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"電気風呂","by":"けんちん"},{"title":"昭和遺産ラブホテル","by":"逢根あまみ"},{"title":"珍人類白書","by":"金原みわ"}],"note":"","curry":"","post":"https://x.com/kenchin/status/987682682048933888?s=20","links":[]},
+{"no":40,"date":"2018-03-24","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"#お寺ポエム","by":"mi2ru"},{"title":"エクストリーム出勤のススメ","by":"Level7G"},{"title":"珍スポ","by":"金原みわ"}],"note":"","curry":"","post":"https://x.com/kenchin/status/977543184560545797?s=20","links":[]},
+{"no":39,"date":"2018-02-24","venue":"北堀江mellow","style":"3周年記念スペシャル","cat":"special","programs":[{"title":"SP音楽ライブ×２","by":"ANATAKIKOU /ONBU-NI-DAKKO"},{"title":"給水塔の蒐集と分類","by":"UC"},{"title":"廃墟","by":"Bob爺"},{"title":"別世界放談","by":"別世界クルー"}],"note":"","curry":"","post":"https://x.com/kenchin/status/967403050510905344?s=20","links":[]},
+{"no":38,"date":"2018-01-20","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"レトロ銭湯","by":"松本康治さん"},{"title":"コンドーム自販機","by":"ヒラタさん"},{"title":"珍スポ","by":"金原みわ"}],"note":"","curry":"","post":"https://x.com/kenchin/status/954715892021002240?s=20","links":[]},
+{"no":37,"date":"2017-12-16","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"絵馬の世界","by":"ビロくん"},{"title":"ドムドム","by":"けんちん＆UC"},{"title":"B級仮装","by":"あっきのこさん"},{"title":"珍スポ","by":"金原みわ"}],"note":"","curry":"","post":"https://x.com/kenchin/status/942028261646770176?s=20","links":[]},
+{"no":36,"date":"2017-11-25","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"珍スポ廃墟","by":"鬼束7段"},{"title":"色々なバスの乗り方","by":"あさりちゃん"},{"title":"廃墟","by":"金原みわ"},{"title":"珍スポ","by":"ビロくん"}],"note":"","curry":"","post":"https://x.com/kenchin/status/934414321488093185?s=20","links":[]},
+{"no":35,"date":"2017-10-28","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"いいビル（イケフェスSP）","by":"tamazo"},{"title":"駐輪禁止看板","by":"ビロくん"},{"title":"普通の中の普通でないもの","by":"斎藤さん"},{"title":"別世界座談会","by":"金原みわ＆前畑温子"}],"note":"","curry":"","post":"https://x.com/kenchin/status/924325058427863041?s=20","links":[]},
+{"no":34,"date":"2017-09-16","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"珍スポ","by":"金原みわ"},{"title":"ビロ&UCプレゼン","by":"ビロくん＆UCくん"},{"title":"廃墟","by":"鏡"},{"title":"ミニコミ寄席","by":"たけしげさん"}],"note":"","curry":"炭鉱廃墟黒カレー2017","post":"https://x.com/kenchin/status/909094767958532096?s=20","links":["https://x.com/elunation/status/908943005242888192?s=20"]},
+{"no":33,"date":"2017-08-26","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"ビロ&UCプレゼン","by":"ビロくん＆UCくん"},{"title":"北海道珍スポ","by":"金原みわ"},{"title":"昭和遺産ラブホテル","by":"逢根あまみ"},{"title":"珍スポII","by":"をかしくん"}],"note":"","curry":"","post":"https://x.com/kenchin/status/901440810863869954?s=20","links":[]},
+{"no":32,"date":"2017-07-29","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"ビロくんプレゼン&となりのトロロ（OPアクト）","by":"ビロくん"},{"title":"ドローン動画","by":"Saho"},{"title":"珍スポ","by":"金原みわ"},{"title":"海外廃墟","by":"Gakuranman"}],"note":"","curry":"","post":"https://x.com/kenchin/status/891293463274110976?s=20","links":[]},
+{"no":31,"date":"2017-06-24","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"ビロくんプレゼン（OPアクト）","by":"ビロくん"},{"title":"団地","by":"けんちん"},{"title":"ごいた入門","by":"米井さん"},{"title":"廃墟","by":"だみあん君"}],"note":"","curry":"","post":"https://x.com/kenchin/status/878625119001759745?s=20","links":["https://x.com/goitaosa/status/1407835866441998337?s=20"]},
+{"no":30,"date":"2017-05-20","venue":"四貫島PORT","style":"現地","cat":"venue","programs":[{"title":"天才プレゼン（OPアクト）","by":"ビロくん"},{"title":"団地&ドムドム","by":"けんちん"},{"title":"バス","by":"あさりちゃん"},{"title":"珍スポwithシカク","by":"金原みわ"}],"note":"","curry":"","post":"https://x.com/kenchin/status/865939282317279232?s=20","links":[]},
+{"no":29,"date":"2017-04-29","venue":"北堀江mellow","style":"現地 （逢根あまみ代打）","cat":"venue","programs":[{"title":"天才兄妹音楽ユニット","by":"団地の宮"},{"title":"ごいた","by":"ごいた"},{"title":"ゆるキャラ","by":"ビロくん"},{"title":"ドムドム","by":"逢根あまみ"},{"title":"昭和ラブホ","by":""}],"note":"","curry":"","post":"https://x.com/kenchin/status/845652284289703938?s=20","links":[]},
+{"no":28,"date":"2017-03-25","venue":"北堀江mellow","style":"現地","cat":"venue","programs":[{"title":"スペシャルDJ","by":""},{"title":"団地","by":""},{"title":"廃墟","by":""},{"title":"珍スポ","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":27,"date":"2017-02-25","venue":"ロフトプラスワンウエスト","style":"別世界Bar2周年記念SP","cat":"special","programs":[{"title":"昭和遺産ラブホ・逢根あまみ／道路プレゼン・のがなあつし／ドムドム連合協会／別世界クルー / かーG／大野裕也","by":""}],"note":"","curry":"","post":"https://x.com/kenchin/status/835312566008098818?s=20","links":["https://x.com/Radio_Kansai_PR/status/835656155560976384?s=20","https://x.com/kenchin/status/835505403945373697?s=20"]},
+{"no":26,"date":"2017-02-18","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"乗りバス","by":"あさりちゃん"},{"title":"ドムドム","by":"けんちん"},{"title":"クスリ","by":"金原みわ"}],"note":"","curry":"","post":"https://x.com/kenchin/status/833121144022511616?s=20","links":[]},
+{"no":25,"date":"2017-01-28","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"rasさん","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":24,"date":"2016-12-17","venue":"北堀江mellow","style":"現地","cat":"venue","programs":[{"title":"別世界Barスペシャル 北堀江mellow / DJスペシャル ビロくん／よいまつり／かーG／金原みわ","by":""}],"note":"","curry":"","post":"","links":["https://x.com/LifeLaboBld/status/810023974390419457?s=20"]},
+{"no":23,"date":"2016-11-19","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"喫茶別世界＆別世界Bar","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":22,"date":"2016-10-22","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"喫茶別世界＆別世界Bar","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":21,"date":"2016-09-24","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"喫茶別世界＆別世界Bar 団地アニマルライド・レズっ娘クラブマル秘プレゼン・珍スポプレゼン","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":20,"date":"2016-08-27","venue":"北堀江CAVE","style":"別世界Bar20th","cat":"special","programs":[{"title":"珍スポ巡り報告","by":"金原みわ"},{"title":"ドムさんぽ8月号","by":"けんちん"},{"title":"廃校レポート","by":"だみあん君"}],"note":"","curry":"","post":"https://x.com/kenchin/status/769735976449040384?s=20","links":[]},
+{"no":19,"date":"2016-07-23","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"ドムドムハンバーガー","by":""},{"title":"昭和ラブホ探訪","by":""},{"title":"パチモノソング","by":""},{"title":"九州旅行記","by":""}],"note":"","curry":"","post":"","links":["https://x.com/GARROD0615/status/756965945973682179?s=20"]},
+{"no":18,"date":"2016-06-25","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"全国行脚レポ","by":"金原みわ"},{"title":"ドムドム最新ニュース","by":"けんちん"},{"title":"プチ廃墟フェス","by":"鬼束7段"}],"note":"","curry":"","post":"","links":[]},
+{"no":17,"date":"2016-05-28","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"伊豆廃墟","by":"だみあん君"},{"title":"四国珍スポ","by":"金原みわさん"},{"title":"遊廓廃墟談","by":"源道寺梅蔵"}],"note":"","curry":"","post":"https://x.com/kenchin/status/736587764037083136?s=20","links":[]},
+{"no":16,"date":"2016-04-23","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[],"note":"","curry":"","post":"","links":[]},
+{"no":15,"date":"2016-03-26","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[],"note":"","curry":"","post":"","links":[]},
+{"no":null,"date":"2016-02-27","venue":"ロフトプラスワンウエスト","style":"現地","cat":"venue","programs":[{"title":"別世界BARクルー （金原みわ【珍スポ】・けんちん【団地】・ダミアンくん【廃墟の危険性についての啓蒙】）  amami＆給水塔UC【終末観光＆日本給水党党首】 LEVEL7G【未成線・ロリ鉄】 よいまつり【音楽】  D＋【団地POPユニット（音楽）】","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":14,"date":"2016-02-20","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[],"note":"","curry":"","post":"","links":[]},
+{"no":13,"date":"2016-01-23","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[],"note":"","curry":"","post":"","links":[]},
+{"no":12,"date":"2015-12-19","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"珍スポ基礎講座","by":"金原みわ"},{"title":"珍レコDJ","by":"カーG"},{"title":"ラブホテルプレゼン","by":"逢根あまみ"}],"note":"","curry":"","post":"","links":[]},
+{"no":11,"date":"2015-11-28","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"山で糞うまい珈琲を飲む","by":"金原みわ"},{"title":"珍レコDJ","by":"カーG"},{"title":"団地のイロハ","by":"けんちん＆UC"}],"note":"","curry":"","post":"","links":[]},
+{"no":10,"date":"2015-10-24","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"珍スポ・団地・廃墟・ラブホテル・カメラ・音楽・舞台・アート etc.","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":9,"date":"2015-09-26","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"ツイコリ・珍レコード・純喫茶・珍スポ・給水塔・団地・廃墟・山コーヒー・ラブホテル・カメラ・音楽・ローカルパン・舞台・アート etc.","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":8,"date":"2015-08-29","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"団地、給水塔、奇食、廃墟、性神信仰、ラブホテル、昭和スポ珍スポ","by":""}],"note":"","curry":"","post":"https://x.com/kenchin/status/637536150794539008?s=20","links":[]},
+{"no":7,"date":"2015-07-25","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[],"note":"","curry":"","post":"","links":[]},
+{"no":6,"date":"2015-06-20","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"珍スポ、団地、奇食、給水塔、廃墟  キョンくん 、しん（泉州）","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":5,"date":"2015-05-23","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"団地・珍スポ・廃墟","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":4,"date":"2015-04-18","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"ダム（今井さん）／団地／廃墟 7danさん / キョンくん、源道寺梅蔵さん、64ATM、しん（泉州）","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":3,"date":"2015-03-28","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"団地の人、珍スポの人、廃墟の人、ダムの人、給水塔の人、ストリップの人","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":2,"date":"2015-02-28","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"団地・珍スポ・廃墟","by":""}],"note":"","curry":"","post":"","links":[]},
+{"no":1,"date":"2015-01-24","venue":"北堀江CAVE","style":"現地","cat":"venue","programs":[{"title":"団地・珍スポ・廃墟","by":""}],"note":"","curry":"","post":"","links":[]}
+];
+
+/* ---------- 以下、表示ロジック（通常は触らない） ---------- */
+(function(){
+  const $=s=>document.querySelector(s);
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const CIRC="①②③④⑤⑥⑦⑧⑨⑩";
+  const DOW="日月火水木金土";
+  const CAT={venue:"現地",hybrid:"配信＋現地",online:"配信のみ",special:"スペシャル"};
+  const events=EVENTS.slice().sort((a,b)=>(b.date.localeCompare(a.date))||((b.no||0)-(a.no||0)));
+
+  /* 扉の列 = 開催回数ぶん */
+  const doors=$("#doors");
+  const numbered=events.filter(e=>e.no!=null);
+  doors.innerHTML=numbered.map(()=>'<span class="mini"></span>').join("");
+
+  /* 統計 */
+  const first=events[events.length-1], latest=events[0];
+  const progCount=events.reduce((n,e)=>n+e.programs.filter(p=>p.title).length,0);
+  const curryCount=events.filter(e=>e.curry&&!e.curry.startsWith("※")&&e.curry!=="なし").length;
+  const presenters=new Set();
+  events.forEach(e=>e.programs.forEach(p=>p.by&&presenters.add(p.by)));
+  const years=(new Date(latest.date)-new Date(first.date))/31557600000;
+  $("#stats").innerHTML=[
+    ["開催回数",Math.max(...numbered.map(e=>e.no)),"回"],
+    ["続けて",Math.floor(years),"年"],
+    ["プレゼン",progCount,"本"],
+    ["オリジナルカレー",curryCount,"皿"],
+  ].map(([l,n,u])=>`<li><span class="n">${n}<small>${u}</small></span><span class="l">${l}</span></li>`).join("");
+
+  /* セレクト */
+  const yearSel=$("#year"), venueSel=$("#venue"), catSel=$("#cat"), q=$("#q"), reset=$("#reset");
+  const yearList=[...new Set(events.map(e=>e.date.slice(0,4)))];
+  yearList.forEach(y=>yearSel.insertAdjacentHTML("beforeend",`<option value="${y}">${y}年</option>`));
+  const venueCount={};events.forEach(e=>venueCount[e.venue]=(venueCount[e.venue]||0)+1);
+  Object.keys(venueCount).sort((a,b)=>venueCount[b]-venueCount[a]).forEach(v=>venueSel.insertAdjacentHTML("beforeend",`<option value="${esc(v)}">${esc(v)}（${venueCount[v]}）</option>`));
+  $("#years").innerHTML=yearList.map(y=>`<li><a href="#y${y}" data-year="${y}">${y}</a></li>`).join("");
+
+  function fmtDate(d){
+    const [y,m,dd]=d.split("-").map(Number);
+    const dow=DOW[new Date(y,m-1,dd).getDay()];
+    return `${y}.${String(m).padStart(2,"0")}.${String(dd).padStart(2,"0")}<span class="dow">(${dow})</span>`;
+  }
+  function linkLabel(u,i){
+    if(/instagram\.com/.test(u)) return "Instagram";
+    const m=u.match(/x\.com\/([^/]+)\//);
+    return m?`@${m[1]}`:`関連${i+1}`;
+  }
+  function render(list){
+    if(!list.length){$("#list").innerHTML='<div class="empty"><b>該当する回がありません</b>条件を変えて探してみてください。</div>';return;}
+    let html="",curYear="";
+    list.forEach(e=>{
+      const y=e.date.slice(0,4);
+      if(y!==curYear){
+        curYear=y;
+        const n=list.filter(x=>x.date.slice(0,4)===y).length;
+        html+=`<div class="year" id="y${y}"><h2>${y}</h2><span>${n}回</span></div>`;
+      }
+      const free=e.programs.length===1&&!e.programs[0].by&&e.programs[0].title.length>30;
+      const progs=e.programs.length?`<ol class="prog${free?" free":""}">${e.programs.map((p,i)=>
+        `<li><span class="c">${e.programs.length>1?CIRC[i]||(i+1):"　"}</span><span class="t">${esc(p.title)}${p.by?`<span class="by">${esc(p.by)}</span>`:""}</span></li>`).join("")}</ol>`:"";
+      const curry=e.curry?`<p class="curry${e.curry.startsWith("※")?" off":""}"><span class="k">Curry</span><span>${esc(e.curry.replace(/^※/,""))}</span></p>`:"";
+      const links=[];
+      if(e.post) links.push(`<li><a href="${esc(e.post)}" target="_blank" rel="noopener">告知ポスト</a></li>`);
+      (e.links||[]).forEach((u,i)=>links.push(`<li><a class="sub" href="${esc(u)}" target="_blank" rel="noopener">${esc(linkLabel(u,i))}</a></li>`));
+      html+=`<article class="ev" id="${e.no!=null?"no"+e.no:"ex"+e.date}">
+        <div class="no">${e.no!=null?`<span class="k">VOL.</span><span class="v">${e.no}</span>`:`<span class="k">EXTRA</span><span class="v sp">番外編</span>`}<time datetime="${e.date}">${fmtDate(e.date)}</time></div>
+        <div>
+          <ul class="meta"><li class="chip venue">${esc(e.venue)}</li><li class="chip ${e.cat}">${esc(e.style)}</li></ul>
+          ${progs}
+          ${e.note?`<p class="note">${esc(e.note)}</p>`:""}
+          ${curry}
+          ${links.length?`<ul class="links">${links.join("")}</ul>`:""}
+        </div></article>`;
+    });
+    $("#list").innerHTML=html;
+  }
+  function norm(s){return String(s||"").toLowerCase().normalize("NFKC");}
+  function apply(){
+    const kw=norm(q.value).trim().split(/\s+/).filter(Boolean);
+    const y=yearSel.value,v=venueSel.value,c=catSel.value;
+    const out=events.filter(e=>{
+      if(y&&!e.date.startsWith(y))return false;
+      if(v&&e.venue!==v)return false;
+      if(c&&e.cat!==c)return false;
+      if(kw.length){
+        const hay=norm([e.venue,e.style,e.note,e.curry,e.date.slice(0,4),e.no!=null?"第"+e.no+"回":"番外編",...e.programs.map(p=>p.title+" "+p.by)].join(" "));
+        return kw.every(k=>hay.includes(k));
+      }
+      return true;
+    });
+    render(out);
+    const active=!!(kw.length||y||v||c);
+    $("#count").innerHTML=active?`<b>${out.length}</b> / ${events.length} 回`:`全 <b>${events.length}</b> 回`;
+    reset.hidden=!active;
+    const shown=new Set(out.map(e=>e.date.slice(0,4)));
+    document.querySelectorAll("#years a").forEach(a=>a.classList.toggle("off",!shown.has(a.dataset.year)));
+  }
+  [q,yearSel,venueSel,catSel].forEach(el=>el.addEventListener("input",apply));
+  reset.addEventListener("click",()=>{q.value="";yearSel.value="";venueSel.value="";catSel.value="";apply();q.focus();});
+  apply();
+  if(location.hash){const t=document.querySelector(location.hash);t&&t.scrollIntoView();}
+})();
+</script>
+</body>
+</html>

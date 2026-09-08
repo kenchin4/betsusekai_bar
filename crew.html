@@ -47,7 +47,9 @@
     letter-spacing:.03em;text-shadow:0 0 28px rgba(233,169,60,.22)
   }
   .mark b{color:var(--amber);font-weight:inherit}
-  .backlink{font-size:13px}
+  .nav{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px}
+  .nav a{text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:1px}
+  .nav a:hover{color:var(--amber)}
 
   /* ---------- hero ---------- */
   .hero{
@@ -139,7 +141,7 @@
 <div class="topbar">
   <div class="wrap">
     <span class="mark">別世界<b>Bar</b></span>
-    <a class="backlink" href="./">次回開催・カウントダウン →</a>
+    <nav class="nav"><a href="./">次回開催・カウントダウン</a><a href="archive.html">過去アーカイブ</a></nav>
   </div>
 </div>
 
@@ -217,6 +219,7 @@
     <p>別世界Barは、2015年1月から大阪で続けている趣味交流トークイベントです。マニアじゃなくても、聞いているだけでも大丈夫。予約不要・途中入退場自由でやっています。</p>
     <p class="next">次回：2026年11月21日（土）19:00開演／18:30開場・四貫島PORT・1,000円</p>
     <p><a href="./">開催までのカウントダウンを見る →</a></p>
+    <p><a href="archive.html">これまでの開催記録（第1回から全回）を見る →</a></p>
   </div>
 
   <footer>

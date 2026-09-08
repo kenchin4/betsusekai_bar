@@ -57,6 +57,10 @@
   }
   .mark b{color:var(--amber);font-weight:inherit}
   .tagline{font-size:13px;color:var(--muted);line-height:1.6}
+  .nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:8px;font-size:13px}
+  .nav a{color:var(--amber-lite);text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:1px}
+  .nav a:hover{color:var(--amber)}
+  .nav a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 
   /* ---------- hero ---------- */
   .hero{
@@ -191,6 +195,8 @@
   .access p{margin:0 0 10px;max-width:38em}
   .access a{color:var(--amber-lite)}
   .access a:focus-visible,.pills li:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  .archive-lead p{margin:0 0 10px;max-width:38em}
+  .archive-lead a{color:var(--amber-lite)}
   footer{
     padding:34px 0 46px;border-top:1px solid var(--line);
     color:var(--muted);font-size:13px;line-height:1.9
@@ -209,6 +215,7 @@
   <div class="wrap">
     <span class="mark">別世界<b>Bar</b></span>
     <span class="tagline">2015年1月から大阪でつづく、趣味交流トークイベント</span>
+    <nav class="nav"><a href="crew.html">クルー紹介</a><a href="archive.html">過去アーカイブ</a></nav>
   </div>
 </div>
 
@@ -277,6 +284,12 @@
     <div class="sec-head"><span class="en">Access</span><h2>会場へのアクセス</h2></div>
     <p><b>四貫島PORT</b>／大阪市此花区。阪神なんば線「千鳥橋」駅からすぐ。</p>
     <p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9B%9B%E8%B2%AB%E5%B3%B6PORT" target="_blank" rel="noopener">Googleマップで場所を見る →</a></p>
+  </section>
+
+  <section class="archive-lead">
+    <div class="sec-head"><span class="en">Archive</span><h2>これまでに開いた扉</h2></div>
+    <p>2015年1月の第1回から100回以上。誰がどんな「別世界」を持ち込み、その夜どんなカレーが出たのか、全回の記録を残しています。</p>
+    <p><a href="archive.html">過去の開催記録を見る →</a></p>
   </section>
 
   <footer>
