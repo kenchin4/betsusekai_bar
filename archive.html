@@ -55,7 +55,7 @@
     background:radial-gradient(80% 70% at 30% 30%,rgba(233,169,60,.10),rgba(233,169,60,0) 62%),
                linear-gradient(180deg,var(--ink),var(--navy) 60%,var(--ink));}
   .hero .wrap{padding:clamp(32px,5vw,54px) 0 clamp(28px,4vw,40px)}
-  .doors{display:flex;gap:6px;align-items:flex-end;margin:0 0 26px;flex-wrap:wrap;max-width:560px}
+  .doors{display:flex;gap:6px;align-items:flex-end;margin:28px 0 0;flex-wrap:wrap;max-width:560px}
   .mini{position:relative;width:14px;aspect-ratio:3/5;border-radius:7px 7px 1px 1px;
     background:linear-gradient(155deg,#1B2848,#0A1128);border:1px solid rgba(233,169,60,.30)}
   .mini::after{content:"";position:absolute;top:12%;bottom:12%;right:-1px;width:2px;border-radius:2px;
@@ -166,11 +166,11 @@
 
 <div class="hero">
   <div class="wrap">
-    <div class="doors" id="doors" aria-hidden="true"></div>
     <p class="eyebrow">Archive</p>
     <h1>これまでに開いた扉</h1>
     <p class="lede">2015年1月、北堀江の小さなバーから始まった別世界Bar。誰がどんな「別世界」を持ち込んだのか、そしてその夜どんなカレーが出たのか。全回の記録です。</p>
     <ul class="stats" id="stats"></ul>
+    <div class="doors" id="doors" aria-hidden="true"></div>
   </div>
 </div>
 
