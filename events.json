@@ -1,23 +1,20 @@
 {
-  "_readme": "別世界Barの開催日程。ここを書き換えて保存すると、GitHub Actions が index.html / crew.html / sitemap.xml / feed.xml / bessekai.ics を自動生成します。日付は日本時間。announced は日程を発表した日（告知タスクの『発表告知』の基準）。",
+  "_readme": "別世界Barの開催日程。ここを書き換えて保存すると、GitHub Actions が index.html / crew.html / sitemap.xml / feed.xml / bessekai.ics を自動生成します。日付は日本時間。announced は日程を発表した日。過去の開催記録は archive.html が本体なので、ここには基本的に次回（と、まだ先の回）だけ書けば十分です。",
   "defaults": {
     "venue": "四貫島PORT",
     "venue_area": "大阪市此花区",
-    "venue_access": "阪神なんば線 千鳥橋駅すぐ",
+    "venue_access": "阪神なんば線「千鳥橋」駅から徒歩5分",
     "price": 1000,
     "doors": "18:30",
     "start": "19:00",
-    "end": "22:30"
+    "end": "22:30",
+    "venue_short_area": "大阪・此花",
+    "venue_addr": "大阪市此花区四貫島1-6-6／阪神なんば線「千鳥橋」駅から徒歩5分"
   },
   "events": [
     {
       "date": "2026-11-21",
       "announced": "2026-09-05",
-      "note": ""
-    },
-    {
-      "date": "2026-08-29",
-      "announced": "2026-07-25",
       "note": ""
     }
   ]
