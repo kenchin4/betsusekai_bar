@@ -43,9 +43,23 @@
 | `build.py` | 手で編集 | 生成スクリプト。Python 3.9以上・追加ライブラリ不要 |
 | `index.html` `crew.html` `sitemap.xml` `feed.xml` `bessekai.ics` | **自動生成** | 直接編集しても次の生成で消える |
 | `og.png` `robots.txt` | 固定 | シェア用画像とクローラ設定 |
+| `poster/template.html` | 手で編集 | X用告知画像（1600×900）の版下 |
+| `poster/render.py` | 手で編集 | 告知画像の生成スクリプト |
 
 ## 手元で動かす
 
 ```
 python3 build.py
 ```
+
+## X用の告知画像を作る
+
+```
+python3 poster/render.py                      # 次回開催・見出しは自動
+python3 poster/render.py --kicker "あすひらきます"
+python3 poster/render.py --out bessekai_20261121.png
+```
+
+`events.json` の次回開催から 1600×900（Xの16:9）のPNGを作る。playwright と Pillow が要る。
+日付・会場・参加費は `events.json` から入るので、回ごとに版下を直す必要はない。
+見出し（左上の一行）は開催日までの日数から自動で決まる（当日／あす／今週／次回）。
