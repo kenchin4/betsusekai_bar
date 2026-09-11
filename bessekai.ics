@@ -22,7 +22,7 @@ DTSTART;TZID=Asia/Tokyo:20261121T183000
 DTEND;TZID=Asia/Tokyo:20261121T223000
 SUMMARY:別世界Bar
 LOCATION:四貫島PORT（大阪市此花区）
-DESCRIPTION:18:30開場／19:00開演。参加費1\,000円（＋1ドリンク）・予約不要・途中入退場OK。\n阪神なんば線「千鳥橋」駅から徒歩5分\nhttps://kenchin4.github.io/betsusekai_bar/
+DESCRIPTION:18:30開場／19:00開演。参加費1\,000円・予約不要・途中入退場OK。\n阪神なんば線「千鳥橋」駅から徒歩5分\nhttps://kenchin4.github.io/betsusekai_bar/
 URL:https://kenchin4.github.io/betsusekai_bar/
 END:VEVENT
 END:VCALENDAR
