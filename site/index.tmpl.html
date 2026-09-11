@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>別世界Bar｜大阪・四貫島PORTの珍スポ×団地×廃墟トークイベント</title>
+<meta name="description" content="珍スポ・団地・廃墟——大阪・四貫島PORTで開催しているトークイベント「別世界Bar」。次回開催までのカウントダウンと開催情報。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="別世界Bar">
+<meta property="og:description" content="珍スポ・団地・廃墟——大阪・四貫島PORTで開催しているトークイベント「別世界Bar」。次回開催までのカウントダウンと開催情報。">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://kenchin4.github.io/betsusekai_bar/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="別世界Bar｜珍スポット×団地×廃墟のトークイベント">
+<link rel="canonical" href="https://kenchin4.github.io/betsusekai_bar/">
+<meta property="og:url" content="https://kenchin4.github.io/betsusekai_bar/">
+<meta property="og:site_name" content="別世界Bar">
+<meta property="og:locale" content="ja_JP">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="google-site-verification" content="lk15XKU4Km7JE0vf0FZP0_h3EpDEGOt84OLlL4R9DqM" />
+{{JSONLD}}<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚪</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Oswald:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    color-scheme: dark;
+    --ink:#070B16;
+    --navy:#0F1A33;
+    --navy-2:#16223F;
+    --amber:#E9A93C;
+    --amber-lite:#F6D08A;
+    --kinari:#F3ECDC;
+    --muted:#96A0BC;
+    --line:rgba(243,236,220,.14);
+    --line-strong:rgba(233,169,60,.38);
+    --jp:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+    --display:"Dela Gothic One","Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+    --num:"Oswald","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--kinari);
+    font-family:var(--jp);
+    font-size:16px;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,var(--navy) 0%,var(--ink) 100%);
+  }
+  .topbar .wrap{
+    display:flex;flex-direction:column;align-items:flex-start;gap:6px;
+    padding-top:26px;padding-bottom:24px;
+  }
+  .mark{
+    font-family:var(--display);font-size:clamp(34px,6.4vw,58px);line-height:1.08;
+    letter-spacing:.03em;color:var(--kinari);
+    text-shadow:0 0 28px rgba(233,169,60,.22)
+  }
+  .mark b{color:var(--amber);font-weight:inherit}
+  .tagline{font-size:13px;color:var(--muted);line-height:1.6}
+  .nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:8px;font-size:13px}
+  .nav a{color:var(--amber-lite);text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:1px}
+  .nav a:hover{color:var(--amber)}
+  .nav a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(90% 70% at 22% 40%,rgba(233,169,60,.10) 0%,rgba(233,169,60,0) 62%),
+      linear-gradient(180deg,var(--ink) 0%,var(--navy) 55%,var(--ink) 100%);
+  }
+  .beam{
+    position:absolute;top:0;left:0;width:min(1100px,105%);height:100%;
+    background:linear-gradient(100deg,rgba(246,208,138,.20),rgba(246,208,138,0) 65%);
+    clip-path:polygon(20% 0,26% 0,100% 55%,100% 100%,16% 100%);
+    pointer-events:none;
+  }
+  .hero .wrap{
+    position:relative;
+    display:grid;grid-template-columns:minmax(200px,300px) 1fr;
+    gap:clamp(28px,5vw,64px);align-items:center;
+    padding-top:clamp(40px,7vw,72px);padding-bottom:clamp(44px,7vw,76px);
+  }
+
+  /* ---------- door ---------- */
+  .door{
+    position:relative;width:100%;aspect-ratio:3/5.1;
+    border-radius:150px 150px 6px 6px;
+    background:linear-gradient(155deg,#1B2848 0%,#0D1730 58%,#0A1128 100%);
+    border:2px solid rgba(233,169,60,.34);
+    box-shadow:0 0 0 10px rgba(15,26,51,.65),0 40px 80px -30px #000;
+  }
+  .door::before,.door::after{
+    content:"";position:absolute;left:16%;right:16%;
+    border:1px solid rgba(243,236,220,.16);
+  }
+  .door::before{top:11%;height:36%;border-radius:90px 90px 4px 4px}
+  .door::after{top:53%;height:33%;border-radius:4px}
+  .knob{
+    position:absolute;right:11%;top:52%;width:11px;height:11px;border-radius:50%;
+    background:var(--amber);box-shadow:0 0 12px rgba(233,169,60,.9)
+  }
+  .crack{
+    position:absolute;top:2%;bottom:2%;right:-7px;width:9px;border-radius:6px;
+    background:linear-gradient(180deg,rgba(246,208,138,.35),var(--amber-lite) 40%,rgba(246,208,138,.35));
+    box-shadow:0 0 26px 8px rgba(233,169,60,.45);
+    animation:breathe 5.5s ease-in-out infinite;
+  }
+  @keyframes breathe{0%,100%{opacity:.72}50%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.crack{animation:none}}
+
+  /* ---------- hero copy ---------- */
+  .eyebrow{
+    margin:0 0 10px;font-family:var(--num);font-size:12px;font-weight:600;
+    letter-spacing:.3em;text-transform:uppercase;color:var(--amber)
+  }
+  h1{
+    margin:0;font-family:var(--display);font-weight:400;
+    font-size:clamp(38px,7.4vw,68px);line-height:1.12;letter-spacing:.01em;
+    text-wrap:balance;color:var(--kinari);
+    text-shadow:0 0 34px rgba(233,169,60,.22)
+  }
+  .lede{margin:16px 0 0;max-width:34em;color:#DCD6C7}
+  .nextdate{
+    margin:26px 0 0;padding-top:22px;border-top:1px solid var(--line-strong);
+    font-size:clamp(19px,2.7vw,26px);font-weight:700;line-height:1.5;color:var(--kinari)
+  }
+  .nextdate .dow{
+    display:inline-block;margin:0 .5em 0 .1em;padding:.05em .5em;border-radius:3px;
+    background:var(--amber);color:#0B1226;font-size:.62em;vertical-align:.22em
+  }
+  .nextdate small{display:block;font-size:14px;font-weight:400;color:var(--muted);margin-top:4px}
+
+  /* ---------- countdown ---------- */
+  .countdown{display:flex;flex-wrap:wrap;gap:clamp(16px,3.4vw,38px);margin:24px 0 0}
+  .cell{min-width:64px}
+  .cell .num{
+    display:block;font-family:var(--num);font-weight:600;font-variant-numeric:tabular-nums;
+    font-size:clamp(42px,8vw,72px);line-height:1;color:var(--amber-lite);
+    text-shadow:0 0 30px rgba(233,169,60,.35)
+  }
+  .cell .unit{
+    display:block;margin-top:8px;padding-top:7px;border-top:1px solid var(--line);
+    font-size:12px;letter-spacing:.22em;color:var(--muted)
+  }
+  .status{
+    margin:22px 0 0;font-size:clamp(20px,3.4vw,30px);font-weight:700;color:var(--amber-lite)
+  }
+  .status small{display:block;font-size:15px;font-weight:400;color:var(--muted);margin-top:6px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0;padding:0;list-style:none}
+  .pills li{
+    font-size:13px;padding:5px 13px;border-radius:999px;
+    border:1px solid var(--line-strong);color:var(--amber-lite)
+  }
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(44px,6vw,68px) 0;border-top:1px solid var(--line)}
+  .sec-head{margin:0 0 26px}
+  .sec-head .en{
+    display:block;font-family:var(--num);font-size:11px;font-weight:600;
+    letter-spacing:.3em;text-transform:uppercase;color:var(--amber)
+  }
+  .sec-head h2{
+    margin:4px 0 0;font-family:var(--display);font-weight:400;
+    font-size:clamp(21px,3.4vw,27px);letter-spacing:.02em
+  }
+  dl.info{display:grid;grid-template-columns:7.5em 1fr;gap:0;margin:0}
+  dl.info dt{
+    padding:14px 0;border-top:1px solid var(--line);
+    font-size:13px;letter-spacing:.14em;color:var(--muted)
+  }
+  dl.info dd{margin:0;padding:14px 0;border-top:1px solid var(--line)}
+  dl.info dd b{color:var(--amber-lite);font-weight:700}
+  .crew{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0 26px;margin:0;padding:0;list-style:none}
+  .crew li{
+    display:flex;align-items:center;gap:14px;
+    padding:20px 0;border-top:2px solid var(--line-strong)
+  }
+  .crew .cavatar{
+    width:58px;height:58px;flex:none;border-radius:50%;object-fit:cover;display:block;
+    border:1px solid var(--line-strong);
+    box-shadow:0 0 0 4px rgba(15,26,51,.9),0 0 18px rgba(233,169,60,.18);
+    background:var(--navy)
+  }
+  .crew .genre{
+    display:block;font-size:12px;letter-spacing:.2em;color:var(--amber);margin-bottom:6px
+  }
+  .crew .who{font-size:20px;font-weight:700}
+  .crew-more{margin:24px 0 0;font-size:14px}
+  .crew-more a{color:var(--amber-lite)}
+  .faq{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(18px,3vw,34px);margin:0;padding:0;list-style:none}
+  .faq li{padding-left:20px;border-left:2px solid var(--line-strong)}
+  .faq .q{display:block;font-weight:700;margin-bottom:4px}
+  .faq .a{color:var(--muted);font-size:14px;line-height:1.8}
+  .access p{margin:0 0 10px;max-width:38em}
+  .access a{color:var(--amber-lite)}
+  .access small{color:var(--muted);font-size:13px}
+  .access code{font-family:var(--num);font-size:12px;color:var(--amber-lite);word-break:break-all}
+  .access a:focus-visible,.pills li:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  .archive-lead p{margin:0 0 10px;max-width:38em}
+  .archive-lead a{color:var(--amber-lite)}
+  footer{
+    padding:34px 0 46px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:13px;line-height:1.9
+  }
+
+  @media (max-width:720px){
+    .hero .wrap{grid-template-columns:1fr;gap:30px}
+    .door{width:min(180px,52%)}
+    .beam{display:none}
+    dl.info{grid-template-columns:6em 1fr}
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <span class="mark">別世界<b>Bar</b></span>
+    <span class="tagline">2015年1月から大阪でつづく、趣味交流トークイベント</span>
+    <nav class="nav"><a href="crew.html">クルー紹介</a><a href="archive.html">過去アーカイブ</a></nav>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="beam" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="door-stage" aria-hidden="true">
+      <div class="door"><span class="knob"></span><span class="crack"></span></div>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">Next Open</p>
+      <h1>次の扉が<br>開くまで</h1>
+      <p class="lede">珍スポ・団地・廃墟——その道のマニアの話を、お酒片手にゆるっと聞ける夜。マニアじゃなくても大丈夫、「ちょっと気になる」だけで入れる扉です。</p>
+{{HERO_NEXT}}
+
+      <div class="countdown" id="countdown" role="timer" aria-live="off">
+        <div class="cell"><span class="num" id="cd-d">--</span><span class="unit">DAYS</span></div>
+        <div class="cell"><span class="num" id="cd-h">--</span><span class="unit">HOURS</span></div>
+        <div class="cell"><span class="num" id="cd-m">--</span><span class="unit">MIN</span></div>
+        <div class="cell"><span class="num" id="cd-s">--</span><span class="unit">SEC</span></div>
+      </div>
+      <p class="status" id="status" hidden></p>
+
+      <ul class="pills">
+        <li>1,000円</li><li>予約不要</li><li>途中入退場OK</li><li>聞くだけ参加OK</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="sec-head"><span class="en">Information</span><h2>開催情報</h2></div>
+    <dl class="info">
+      <dt>日時</dt><dd>{{INFO_DATETIME}}</dd>
+      <dt>会場</dt><dd>四貫島PORT（大阪市此花区）／阪神なんば線 千鳥橋駅すぐ</dd>
+      <dt>参加費</dt><dd>1,000円（当日受付でお支払い・1ドリンク別）</dd>
+      <dt>予約</dt><dd>不要。開場後はいつ来ても、途中で帰ってもOKです。</dd>
+      <dt>出演</dt><dd>別世界Barクルー（金原みわ・けんちん・ダミアンくん・Eluna）</dd>
+    </dl>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="en">Crew</span><h2>扉の向こうにいる4人</h2></div>
+    <ul class="crew">
+      <li><img class="cavatar" src="data:image/webp;base64,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" alt="金原みわ さんのSNSアイコン" width="112" height="112"><div><span class="genre">珍スポット</span><span class="who">金原みわ</span></div></li>
+      <li><img class="cavatar" src="data:image/webp;base64,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" alt="けんちん さんのSNSアイコン" width="112" height="112"><div><span class="genre">団地</span><span class="who">けんちん</span></div></li>
+      <li><img class="cavatar" src="data:image/webp;base64,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" alt="ダミアンくん さんのSNSアイコン" width="112" height="112"><div><span class="genre">廃墟</span><span class="who">ダミアンくん</span></div></li>
+      <li><img class="cavatar" src="data:image/webp;base64,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" alt="Eluna さんのSNSアイコン" width="112" height="112"><div><span class="genre">廃墟</span><span class="who">Eluna</span></div></li>
+    </ul>
+    <p class="crew-more"><a href="crew.html">4人のプロフィールを見る →</a></p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="en">First Time?</span><h2>はじめての方へ</h2></div>
+    <ul class="faq">
+      <li><span class="q">マニアじゃなくても入れますか？</span><span class="a">むしろ大歓迎です。知らないジャンルの話ほど、聞いてみると意外とクセになります。</span></li>
+      <li><span class="q">ひとりでも大丈夫？</span><span class="a">ひとりでふらっと来る方がほとんど。聞いているだけでもまったく問題ありません。</span></li>
+      <li><span class="q">遅れて行ってもいい？</span><span class="a">予約不要・途中入退場自由です。仕事帰りやお散歩ついでにどうぞ。</span></li>
+    </ul>
+  </section>
+
+  <section class="access">
+    <div class="sec-head"><span class="en">Access</span><h2>会場へのアクセス</h2></div>
+    <p><b>四貫島PORT</b>／大阪市此花区。阪神なんば線「千鳥橋」駅からすぐ。</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9B%9B%E8%B2%AB%E5%B3%B6PORT" target="_blank" rel="noopener">Googleマップで場所を見る →</a></p>
+  </section>
+
+  <section class="access">
+    <div class="sec-head"><span class="en">Subscribe</span><h2>次回の日程を受け取る</h2></div>
+    <p>日程が決まると、このページ・RSS・カレンダーが自動で更新されます。</p>
+    <p><a href="bessekai.ics">カレンダーに登録する（.ics）</a>　／　<a href="feed.xml">RSSで受け取る</a></p>
+    <p><small>Googleカレンダーの場合は「他のカレンダー ＞ URLで追加」に <code>https://kenchin4.github.io/betsusekai_bar/bessekai.ics</code> を貼ると、以後の日程も自動で入ります。</small></p>
+  </section>
+
+  <section class="archive-lead">
+    <div class="sec-head"><span class="en">Archive</span><h2>これまでに開いた扉</h2></div>
+    <p>2015年1月の第1回から100回以上。誰がどんな「別世界」を持ち込み、その夜どんなカレーが出たのか、全回の記録を残しています。</p>
+    <p><a href="archive.html">過去の開催記録を見る →</a></p>
+  </section>
+
+  <footer>
+    別世界Bar｜珍スポ・団地・廃墟——新しい趣味の扉を開けるトークイベント。2015年1月から大阪で開催しています。<br>
+    {{FOOTER_NEXT}}
+  </footer>
+</div>
+
+<script>
+  // ▼ この3行は events.json から自動生成されます（手で書き換えないでください）
+  var DOORS_OPEN = "{{DOORS_OPEN}}";
+  var SHOW_START = "{{SHOW_START}}";
+  var SHOW_END   = "{{SHOW_END}}";
+
+  (function () {
+    var open = Date.parse(DOORS_OPEN),
+        start = Date.parse(SHOW_START),
+        end = Date.parse(SHOW_END),
+        cd = document.getElementById("countdown"),
+        st = document.getElementById("status"),
+        d = document.getElementById("cd-d"),
+        h = document.getElementById("cd-h"),
+        m = document.getElementById("cd-m"),
+        s = document.getElementById("cd-s"),
+        pad = function (n) { return n < 10 ? "0" + n : String(n); };
+
+    function show(msg, sub) {
+      cd.hidden = true;
+      st.hidden = false;
+      st.innerHTML = msg + (sub ? '<small>' + sub + '</small>' : '');
+    }
+
+    function tick() {
+      if (!SHOW_START) {
+        show("次回の扉は準備中です。", "日程が決まり次第、このページとRSS・カレンダーでお知らせします。");
+        return false;
+      }
+      var now = Date.now(), diff = start - now;
+      if (now >= end) {
+        show("今回の扉は閉じました。", "次回の日程が決まり次第、このページとRSS・カレンダーでお知らせします。ご来場ありがとうございました。");
+        return false;
+      }
+      if (now >= open) {
+        show("今夜、扉は開いています。", "四貫島PORTでお待ちしています。途中からでもどうぞ。");
+        return true;
+      }
+      cd.hidden = false;
+      st.hidden = true;
+      var sec = Math.floor(diff / 1000);
+      d.textContent = Math.floor(sec / 86400);
+      h.textContent = pad(Math.floor(sec / 3600) % 24);
+      m.textContent = pad(Math.floor(sec / 60) % 60);
+      s.textContent = pad(sec % 60);
+      return true;
+    }
+
+    if (tick()) { setInterval(tick, 1000); }
+  })();
+</script>
+</body>
+</html>
