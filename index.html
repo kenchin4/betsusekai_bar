@@ -31,7 +31,9 @@
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "url": "https://kenchin4.github.io/betsusekai_bar/",
-  "image": ["https://kenchin4.github.io/betsusekai_bar/og.png"],
+  "image": [
+    "https://kenchin4.github.io/betsusekai_bar/og.png"
+  ],
   "location": {
     "@type": "Place",
     "name": "四貫島PORT",
@@ -48,7 +50,7 @@
     "priceCurrency": "JPY",
     "availability": "https://schema.org/InStock",
     "url": "https://kenchin4.github.io/betsusekai_bar/",
-    "validFrom": "2026-09-08T00:00:00+09:00"
+    "validFrom": "2026-09-05T00:00:00+09:00"
   },
   "organizer": {
     "@type": "Organization",
@@ -242,6 +244,8 @@
   .faq .a{color:var(--muted);font-size:14px;line-height:1.8}
   .access p{margin:0 0 10px;max-width:38em}
   .access a{color:var(--amber-lite)}
+  .access small{color:var(--muted);font-size:13px}
+  .access code{font-family:var(--num);font-size:12px;color:var(--amber-lite);word-break:break-all}
   .access a:focus-visible,.pills li:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
   .archive-lead p{margin:0 0 10px;max-width:38em}
   .archive-lead a{color:var(--amber-lite)}
@@ -334,6 +338,13 @@
     <p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9B%9B%E8%B2%AB%E5%B3%B6PORT" target="_blank" rel="noopener">Googleマップで場所を見る →</a></p>
   </section>
 
+  <section class="access">
+    <div class="sec-head"><span class="en">Subscribe</span><h2>次回の日程を受け取る</h2></div>
+    <p>日程が決まると、このページ・RSS・カレンダーが自動で更新されます。</p>
+    <p><a href="bessekai.ics">カレンダーに登録する（.ics）</a>　／　<a href="feed.xml">RSSで受け取る</a></p>
+    <p><small>Googleカレンダーの場合は「他のカレンダー ＞ URLで追加」に <code>https://kenchin4.github.io/betsusekai_bar/bessekai.ics</code> を貼ると、以後の日程も自動で入ります。</small></p>
+  </section>
+
   <section class="archive-lead">
     <div class="sec-head"><span class="en">Archive</span><h2>これまでに開いた扉</h2></div>
     <p>2015年1月の第1回から100回以上。誰がどんな「別世界」を持ち込み、その夜どんなカレーが出たのか、全回の記録を残しています。</p>
@@ -347,10 +358,10 @@
 </div>
 
 <script>
-  // ▼ 次回開催日を変えるときはこの3行だけ書き換えてください（日本時間）
-  var DOORS_OPEN = "2026-11-21T18:30:00+09:00"; // 開場
-  var SHOW_START = "2026-11-21T19:00:00+09:00"; // 開演（カウントダウンの基準）
-  var SHOW_END   = "2026-11-21T22:30:00+09:00"; // この時刻を過ぎたら「終了」表示に切り替え
+  // ▼ この3行は events.json から自動生成されます（手で書き換えないでください）
+  var DOORS_OPEN = "2026-11-21T18:30:00+09:00";
+  var SHOW_START = "2026-11-21T19:00:00+09:00";
+  var SHOW_END   = "2026-11-21T22:30:00+09:00";
 
   (function () {
     var open = Date.parse(DOORS_OPEN),
@@ -371,9 +382,13 @@
     }
 
     function tick() {
+      if (!SHOW_START) {
+        show("次回の扉は準備中です。", "日程が決まり次第、このページとRSS・カレンダーでお知らせします。");
+        return false;
+      }
       var now = Date.now(), diff = start - now;
       if (now >= end) {
-        show("今回の扉は閉じました。", "次回の日程が決まり次第、このページでお知らせします。ご来場ありがとうございました。");
+        show("今回の扉は閉じました。", "次回の日程が決まり次第、このページとRSS・カレンダーでお知らせします。ご来場ありがとうございました。");
         return false;
       }
       if (now >= open) {

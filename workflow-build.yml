@@ -1,0 +1,44 @@
+name: events.json から公開ページを生成
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - events.json
+      - build.py
+      - site/**
+      - .github/workflows/build.yml
+  schedule:
+    # 毎日 00:05 JST（15:05 UTC）。開催終了後に「次回」表示を自動で切り替えるため
+    - cron: "5 15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-site
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # lastmod を git の日付から出すため
+
+      - name: 生成
+        run: python3 build.py
+
+      - name: 変更があれば commit & push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A index.html crew.html sitemap.xml feed.xml bessekai.ics
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "自動生成: events.json から公開ページを更新"
+            git push
+          fi

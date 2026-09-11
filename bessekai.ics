@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//betsusekai bar//events//JA
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:別世界Bar
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+BEGIN:VTIMEZONE
+TZID:Asia/Tokyo
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0900
+TZOFFSETTO:+0900
+TZNAME:JST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:betsusekai-bar-2026-08-29@kenchin4.github.io
+DTSTAMP:20260724T150000Z
+DTSTART;TZID=Asia/Tokyo:20260829T183000
+DTEND;TZID=Asia/Tokyo:20260829T223000
+SUMMARY:別世界Bar
+LOCATION:四貫島PORT（大阪市此花区）
+DESCRIPTION:18:30開場／19:00開演。参加費1\,000円・予約不要・途中入退場OK。\n阪神なんば線 千鳥橋駅すぐ\nhttps://kenchin4.github.io/betsusekai_bar/
+URL:https://kenchin4.github.io/betsusekai_bar/
+END:VEVENT
+BEGIN:VEVENT
+UID:betsusekai-bar-2026-11-21@kenchin4.github.io
+DTSTAMP:20260904T150000Z
+DTSTART;TZID=Asia/Tokyo:20261121T183000
+DTEND;TZID=Asia/Tokyo:20261121T223000
+SUMMARY:別世界Bar
+LOCATION:四貫島PORT（大阪市此花区）
+DESCRIPTION:18:30開場／19:00開演。参加費1\,000円・予約不要・途中入退場OK。\n阪神なんば線 千鳥橋駅すぐ\nhttps://kenchin4.github.io/betsusekai_bar/
+URL:https://kenchin4.github.io/betsusekai_bar/
+END:VEVENT
+END:VCALENDAR
