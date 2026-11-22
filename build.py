@@ -6,7 +6,7 @@
 入力:    events.json, site/index.tmpl.html, site/crew.tmpl.html
 出力:    index.html, crew.html, sitemap.xml, feed.xml, bessekai.ics
 """
-import json, subprocess, sys
+import json, re, subprocess, sys
 from datetime import datetime, date, timedelta, timezone
 from pathlib import Path
 
@@ -49,6 +49,67 @@ def git_date(*paths):
         return date.fromisoformat(out) if out else None
     except Exception:
         return None
+
+CIRCLED = "①②③④⑤⑥⑦⑧⑨"
+
+def hesc(s):
+    return (str(s).replace("&", "&amp;").replace("<", "&lt;")
+            .replace(">", "&gt;").replace('"', "&quot;"))
+
+def last_archived():
+    """archive.html の EVENTS 先頭（＝直近の開催回）と、その回のカレー写真を取り出す。
+    取れなければ None（TOPの「前回」セクションは出さない）。"""
+    p = ROOT / "archive.html"
+    if not p.exists():
+        return None
+    try:
+        txt = p.read_text(encoding="utf-8")
+        head = txt.index("const EVENTS = [")
+        line = txt[head:].split("\n")[1].rstrip().rstrip(",")
+        ev = json.loads(line)
+        img = None
+        if ev.get("no") is not None:
+            m = re.search(r'\n%d:\{src:"([^"]+)",by:"([^"]*)"\}' % ev["no"], txt)
+            if m:
+                img = {"src": m.group(1), "by": m.group(2)}
+        ev["img"] = img
+        return ev
+    except Exception:
+        return None
+
+def recap_html(ev):
+    if not ev:
+        return ""
+    day = date.fromisoformat(ev["date"])
+    label = f"第{ev['no']}回・{day.year}年{day.month}月{day.day}日（{DOW[day.weekday()]}）" if ev.get("no") else \
+            f"{day.year}年{day.month}月{day.day}日（{DOW[day.weekday()]}）"
+    progs = []
+    for i, pr in enumerate(ev.get("programs", [])[:9]):
+        by = f'<span class="by">{hesc(pr["by"])}</span>' if pr.get("by") else ""
+        progs.append(f'<li><span class="c">{CIRCLED[i]}</span>'
+                     f'<span><span class="t">{hesc(pr["title"])}</span>{by}</span></li>')
+    if not progs:
+        return ""
+    fig = ""
+    if ev.get("img") and ev.get("curry") and not ev["curry"].startswith("※"):
+        credit = f'<small>写真：@{hesc(ev["img"]["by"])}</small>' if ev["img"].get("by") else ""
+        fig = (f'    <figure style="--r:-1.5deg">'
+               f'<img src="{ev["img"]["src"]}" alt="{hesc(ev["curry"])}" loading="lazy" width="420" height="315">'
+               f'<figcaption>この日のカレー「{hesc(ev["curry"])}」{credit}</figcaption></figure>\n')
+    anchor = f'archive.html#no{ev["no"]}' if ev.get("no") else "archive.html"
+    curry_line = ""
+    if ev.get("curry") and not fig and not ev["curry"].startswith("※"):
+        curry_line = f'      <p class="note">この日のカレーは「{hesc(ev["curry"])}」でした。</p>\n'
+    return (f'  <section class="recap">\n'
+            f'    <div class="sec-h"><h2>前回はこんな夜でした</h2><span class="memo">{label}</span></div>\n'
+            f'    <div class="recap-grid">\n{fig}'
+            f'      <div>\n'
+            f'        <ul class="recap-prog">\n          ' + "\n          ".join(progs) + '\n        </ul>\n'
+            f'{curry_line}'
+            f'        <p class="recap-more"><a href="{anchor}">この回の記録を見る</a></p>\n'
+            f'      </div>\n'
+            f'    </div>\n'
+            f'  </section>\n')
 
 def build(now=None):
     now = now or datetime.now(JST)
@@ -97,7 +158,8 @@ def build(now=None):
         js = {"DOORS_OPEN": "", "SHOW_START": "", "SHOW_END": ""}
         crew_next = "次回 日程調整中<small>決まり次第お知らせします</small>"
     t = (t.replace("{{JSONLD}}", jsonld).replace("{{HERO_NEXT}}", hero)
-          .replace("{{INFO_DATETIME}}", info).replace("{{FOOTER_NEXT}}", footer))
+          .replace("{{INFO_DATETIME}}", info).replace("{{FOOTER_NEXT}}", footer)
+          .replace("{{RECAP}}\n", recap_html(last_archived())))
     for k, v in js.items():
         t = t.replace("{{" + k + "}}", v)
     (ROOT / "index.html").write_text(t, encoding="utf-8")
