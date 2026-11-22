@@ -73,6 +73,16 @@ def last_archived():
             if m:
                 img = {"src": m.group(1), "by": m.group(2)}
         ev["img"] = img
+        # 登壇者アイコン（archive.html の ICONS から）
+        icons = {}
+        for pr in ev.get("programs", []):
+            for h in (pr.get("x") or "").split(","):
+                h = h.strip()
+                if h and h not in icons:
+                    mi = re.search(r'"%s":"(data:image/[a-z]+;base64,[A-Za-z0-9+/=]+)"' % re.escape(h), txt)
+                    if mi:
+                        icons[h] = mi.group(1)
+        ev["icons"] = icons
         return ev
     except Exception:
         return None
@@ -85,7 +95,13 @@ def recap_html(ev):
             f"{day.year}年{day.month}月{day.day}日（{DOW[day.weekday()]}）"
     progs = []
     for i, pr in enumerate(ev.get("programs", [])[:9]):
-        by = f'<span class="by">{hesc(pr["by"])}</span>' if pr.get("by") else ""
+        avs = ""
+        for h in (pr.get("x") or "").split(","):
+            h = h.strip()
+            src = (ev.get("icons") or {}).get(h)
+            if src:
+                avs += f'<img class="pav" src="{src}" alt="" width="22" height="22" loading="lazy">'
+        by = f'<span class="by">{avs}{hesc(pr["by"])}</span>' if pr.get("by") else ""
         progs.append(f'<li><span class="c">{CIRCLED[i]}</span>'
                      f'<span><span class="t">{hesc(pr["title"])}</span>{by}</span></li>')
     if not progs:
@@ -101,7 +117,7 @@ def recap_html(ev):
     if ev.get("curry") and not fig and not ev["curry"].startswith("※"):
         curry_line = f'      <p class="note">この日のカレーは「{hesc(ev["curry"])}」でした。</p>\n'
     return (f'  <section class="recap">\n'
-            f'    <div class="sec-h"><h2>前回はこんな夜でした</h2><span class="memo">{label}</span></div>\n'
+            f'    <div class="sec-h"><h2>前回の別世界Bar</h2><span class="memo">{label}</span></div>\n'
             f'    <div class="recap-grid">\n{fig}'
             f'      <div>\n'
             f'        <ul class="recap-prog">\n          ' + "\n          ".join(progs) + '\n        </ul>\n'
