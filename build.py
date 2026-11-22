@@ -100,7 +100,7 @@ def recap_html(ev):
             h = h.strip()
             src = (ev.get("icons") or {}).get(h)
             if src:
-                avs += f'<img class="pav" src="{src}" alt="" width="22" height="22" loading="lazy">'
+                avs += f'<img class="pav" src="{src}" alt="" width="22" height="22">'
         by = f'<span class="by">{avs}{hesc(pr["by"])}</span>' if pr.get("by") else ""
         progs.append(f'<li><span class="c">{CIRCLED[i]}</span>'
                      f'<span><span class="t">{hesc(pr["title"])}</span>{by}</span></li>')
@@ -110,7 +110,7 @@ def recap_html(ev):
     if ev.get("img") and ev.get("curry") and not ev["curry"].startswith("※"):
         credit = f'<small>写真：@{hesc(ev["img"]["by"])}</small>' if ev["img"].get("by") else ""
         fig = (f'    <figure style="--r:-1.5deg">'
-               f'<img src="{ev["img"]["src"]}" alt="{hesc(ev["curry"])}" loading="lazy" width="420" height="315">'
+               f'<img src="{ev["img"]["src"]}" alt="{hesc(ev["curry"])}" width="420" height="315">'
                f'<figcaption>この日のカレー「{hesc(ev["curry"])}」{credit}</figcaption></figure>\n')
     anchor = f'archive.html#no{ev["no"]}' if ev.get("no") else "archive.html"
     curry_line = ""
